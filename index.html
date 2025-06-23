@@ -10,10 +10,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+	<a id="top"></a>
 	<header class="main-header">
 		<div class="container header-flex">
 			<nav class="main-nav">
 				<ul>
+					<li><a href="#top" class="smooth-scroll">Home</a></li>
+					<li><a href="#about" class="smooth-scroll">About Me</a></li>
 					<li><a href="#projects" class="smooth-scroll">Projects</a></li>
 					<li><a href="#contact" class="smooth-scroll">Contact</a></li>
 				</ul>
@@ -172,6 +175,11 @@
 				msg.style.display = 'block';
 				setTimeout(() => { msg.style.display = 'none'; }, 4000);
 			});
+		});
+
+		// גלילה אוטומטית לראש הדף בטעינה (כולל רענון)
+		window.addEventListener('beforeunload', function () {
+			window.scrollTo(0, 0);
 		});
 	</script>
 </body>

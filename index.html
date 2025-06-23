@@ -66,7 +66,7 @@
 		<section id="contact" class="section contact-section">
 			<div class="container">
 				<h2>Contact</h2>
-				<form name="contact" method="POST" data-netlify="true">
+				<form name="contact" method="POST" data-netlify="true" id="contactForm">
 					<input type="hidden" name="form-name" value="contact">
 					<div class="form-group">
 						<label for="name">Full Name</label>
@@ -81,6 +81,7 @@
 						<textarea id="message" name="message" rows="5" required placeholder="Write your message..."></textarea>
 					</div>
 					<button type="submit" class="btn hero-btn send-btn">Send</button>
+					<div id="formMessage" class="form-message" style="display:none;"></div>
 				</form>
 			</div>
 		</section>
@@ -100,5 +101,36 @@
 			<div class="footer-copy">&copy; 2024 Max Halfin. All rights reserved.</div>
 		</div>
 	</footer>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const form = document.getElementById('contactForm');
+		const msg = document.getElementById('formMessage');
+		form.addEventListener('submit', async function(e) {
+			e.preventDefault();
+			const formData = new FormData(form);
+			try {
+				const res = await fetch('/', {
+					method: 'POST',
+					body: formData
+				});
+				if (res.ok) {
+					msg.textContent = 'Your message was sent successfully!';
+					msg.className = 'form-message success';
+					msg.style.display = 'block';
+					form.reset();
+				} else {
+					msg.textContent = 'Failed to send message.';
+					msg.className = 'form-message error';
+					msg.style.display = 'block';
+				}
+			} catch (err) {
+				msg.textContent = 'Server error. Please try again later.';
+				msg.className = 'form-message error';
+				msg.style.display = 'block';
+			}
+			setTimeout(() => { msg.style.display = 'none'; }, 4000);
+		});
+	});
+	</script>
 </body>
 </html>

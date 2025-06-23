@@ -30,7 +30,7 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: email,
+      from: `"${name}" <${email}>`,
       to: 'maxhalfin18@gmail.com',
       subject: `Contact Form - ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`

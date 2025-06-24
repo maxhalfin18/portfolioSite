@@ -272,6 +272,32 @@ main {
   box-shadow: 0 8px 32px rgba(67,89,103,0.13);
   border-color: var(--accent-color);
 }
+.project-card img[alt="portfolioSite Project"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(67,89,103,0.10);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.project-card img[alt="portfolioSite Project"]:hover {
+  transform: scale(1.05);
+}
+.project-card img[alt="PokemonAPI Project"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(67,89,103,0.10);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.project-card img[alt="PokemonAPI Project"]:hover {
+  transform: scale(1.05);
+}
 .contact-section {
   background: var(--white);
   border-radius: 32px;

@@ -17,12 +17,12 @@ This is my personal portfolio site designed to showcase selected projects and al
 - Hosted assets (images, profile, project banners)
 
 ## File Structure
-
+```
 ├── index.html          # Main portfolio page
 ├── style.css           # Styling for all components
 ├── server.js           # Express server with contact form backend
 ├── /assets             # Profile images, logos, banners
-
+```
 ## Contact Form Setup
 
 To make the contact form work:

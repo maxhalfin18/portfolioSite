@@ -36,38 +36,13 @@ This is my personal portfolio site designed to showcase selected projects and al
 - **PokemonAPI**: Collect and present Pokémon data with images, sounds, and advanced filtering.
 - **portfolioSite**: Personal portfolio website to showcase projects and contact me directly.
 
-## Contact Form Setup
+## Deployment & Hosting
 
-To make the contact form work:
-1. Set up a Gmail account for sending emails.
-2. Generate a Gmail App Password.
-3. Replace the credentials in `server.js` under the `nodemailer.createTransport` config.
+- The domain was purchased via GoDaddy.
+- The site is hosted and deployed using [Netlify](https://www.netlify.com/).
+- The contact form uses **Netlify Forms** for serverless form handling and submissions.
 
-```js
-auth: {
-  user: 'your_email@gmail.com',
-  pass: 'your_generated_app_password'
-}
-```
-
-## How to Run Locally
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/maxhalfin18/portfolioSite.git
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the server:
-   ```
-   node server.js
-   ```
-4. Open in your browser:
-   ```
-   http://localhost:3000
-   ```
+No backend server setup is required for the contact form – submissions are managed directly by Netlify.
 
 ## Open Graph & Social Preview
 

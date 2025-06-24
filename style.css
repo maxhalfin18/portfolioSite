@@ -36,8 +36,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .header-flex {
   display: flex;
@@ -156,7 +156,7 @@ body {
   text-shadow: 0 4px 24px rgba(67,89,103,0.35);
 }
 .hero-desc {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #e9eef2;
   margin-bottom: 2.2rem;
   max-width: 650px;
@@ -297,14 +297,11 @@ main {
   transform: scale(1.05);
 }
 .contact-section {
-  background: var(--white);
-  border-radius: 32px;
-  box-shadow: 0 4px 32px rgba(67,89,103,0.10);
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  border: 2.5px solid;
-  border-image: linear-gradient(90deg, #6ec1e4 0%, #435967 100%);
-  border-image-slice: 1;
+  background: var(--section-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(67,89,103,0.06);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .contact-section h2 {
   color: var(--main-color);

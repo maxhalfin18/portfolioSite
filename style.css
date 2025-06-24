@@ -118,7 +118,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-radius: 20px;
   overflow: hidden;
 }
 .signature-bg-behind {
@@ -140,7 +139,6 @@ body {
   width: 320px;
   height: 400px;
   object-fit: contain;
-  border-radius: 20px;
   box-shadow: 0 8px 40px rgba(67,89,103,0.18);
   image-rendering: auto;
   transition: transform 0.5s cubic-bezier(.4,2,.6,1), box-shadow 0.5s;
@@ -492,6 +490,11 @@ main {
     margin-bottom: 1rem;
   }
   .profile-pic-hero {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin-left: auto;
     width: 100px;
     height: 120px;
     object-fit: contain;

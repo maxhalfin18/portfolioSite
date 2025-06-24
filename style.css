@@ -36,8 +36,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
 }
 .header-flex {
   display: flex;
@@ -83,6 +83,8 @@ body {
   position: relative;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
+  margin-top: -32px;
+  z-index: 1;
   box-shadow: 0 4px 32px rgba(67,89,103,0.10);
   overflow: hidden;
 }
@@ -198,9 +200,8 @@ body {
   color: var(--white);
 }
 main {
-  background: var(--white);
+  background: var(--section-bg);
   border-radius: var(--radius);
-  box-shadow: 0 2px 16px rgba(67,89,103,0.10);
   margin: 40px auto 0 auto;
   max-width: 1100px;
   padding: 40px 0 0 0;
@@ -214,7 +215,7 @@ main {
   border-bottom: none;
 }
 .projects-section {
-  background: var(--section-bg);
+  background: var(--white);
   border-radius: var(--radius);
   box-shadow: 0 2px 12px rgba(67,89,103,0.06);
   padding-top: 2rem;
@@ -400,8 +401,6 @@ main {
   .hero-section.hero-bg {
     min-height: 340px;
     background-position: center top;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
   }
   .hero-flex {
     flex-direction: column;
@@ -487,13 +486,11 @@ main {
     margin-bottom: 1rem;
   }
   .profile-pic-hero {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
+    width: 180px;
+    height: 220px;
     display: block;
     margin-left: auto;
-    width: 100px;
-    height: 120px;
+    margin-right: auto;
     object-fit: contain;
   }
   main {
@@ -589,8 +586,8 @@ main {
     font-size: 0.9rem;
   }
   .profile-pic-hero {
-    width: 80px;
-    height: 100px;
+    width: 120px;
+    height: 150px;
   }
   .main-nav ul {
     gap: 0.6rem;
@@ -751,4 +748,11 @@ main {
   .nav-signature {
     margin-left: 0.7rem;
   }
+}
+.about-section h2,
+.contact-section h2 {
+  color: var(--main-color);
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
 }

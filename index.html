@@ -1,145 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Max Halfin | Portfolio</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Max Halfin | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
-	<a id="top"></a>
-	<header class="main-header">
-		<div class="container header-flex">
-			<nav class="main-nav">
-				<ul>
-					<li><a href="#top" class="smooth-scroll">Home</a></li>
-					<li><a href="#about" class="smooth-scroll">About Me</a></li>
-					<li><a href="#projects" class="smooth-scroll">Projects</a></li>
-					<li><a href="#contact" class="smooth-scroll">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<section class="hero-section hero-bg">
-		<div class="container hero-flex">
-			<div class="hero-content">
-				<h1>Max Halfin</h1>
-				<p class="hero-desc">Welcome to my official portfolio website!<br></p>
-				<div class="hero-btns">
-				</div>
-			</div>
-			<div class="hero-image">
-				<img src="assets/profile.png" alt="Max Halfin" class="profile-pic-hero">
-			</div>
-		</div>
-	</section>
-	<main>
-		<section id="about" class="section about-section">
-			<div class="container">
-				<h2>About Me</h2>
-				<h4>Welcome to my official portfolio website!</h4>
-				<p>
-				I'm a motivated B.Sc. student in Information Systems (Data Science), passionate about building real-world apps like XPme.
-				I develop data-driven systems for lottery and stock predictions, using React, Python, Java, and AI.
-				Currently transitioning from security work to a full-time tech career in software engineering or data science.
-				I love gamification, automation, and creating tools people genuinely enjoy using.
-				</p>
-			</div>
-		</section>
-		<section id="projects" class="section projects-section">
-			<div class="container">
-				<h2>My Projects</h2>
-				<div class="projects-list">
-					<div class="project-card">
-						<h3>PokemonAPI</h3>
-						<p>Full-stack project for collecting, processing, and presenting Pokémon data from the official PokéAPI. Includes images, sounds, and multiple data formats.</p>
-						<a href="https://github.com/maxhalfin18/pokemonAPI" target="_blank">
-							<img src="assets/poke.png" alt="PokemonAPI Project" style="width: 220px; border-radius: 12px; box-shadow: 0 2px 12px rgba(67,89,103,0.10); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="contact" class="section contact-section">
-			<div class="container">
-				<h2>Contact</h2>
-				<span class="contact-subtitle">Feel free to reach out for collaborations or questions!</span>
-				<form name="contact" method="POST" data-netlify="true" id="contactForm">
-					<input type="hidden" name="form-name" value="contact">
-					<div class="form-group">
-						<label for="name">Full Name</label>
-						<input type="text" id="name" name="name" required placeholder="Enter your full name">
-					</div>
-					<div class="form-group">
-						<label for="email">Email</label>
-						<input type="email" id="email" name="email" required placeholder="Enter your email">
-					</div>
-					<div class="form-group">
-						<label for="message">Description</label>
-						<textarea id="message" name="message" rows="5" required placeholder="Write your message..."></textarea>
-					</div>
-					<button type="submit" class="btn hero-btn send-btn">Send</button>
-					<div id="formMessage" class="form-message" style="display:none;"></div>
-				</form>
-			</div>
-		</section>
-	</main>
-	<footer class="main-footer">
-		<div class="container footer-flex">
-			<div class="footer-menu">
-				<ul>
-				</ul>
-			</div>
-			<div class="footer-social">
-				<a href="https://www.facebook.com/maxhalfin18" title="Facebook" target="_blank">
-					<img src="assets/facebook.png" alt="Facebook" />
-				</a>
-				<a href="https://www.instagram.com/maxhalfin18/" title="Instagram" target="_blank">
-					<img src="assets/instagram.png" alt="Instagram" />
-				</a>
-				<a href="https://github.com/maxhalfin18" title="GitHub" target="_blank">
-					<img src="assets/github.png" alt="GitHub" />
-				</a>
-				<a href="https://www.linkedin.com/in/max-halfin-46b0922b3/" title="LinkedIn" target="_blank">
-					<img src="assets/linkedin.png" alt="LinkedIn" />
-				</a>
-			</div>
-			<div class="footer-copy">&copy; 2024 Max Halfin. All rights reserved.</div>
-		</div>
-	</footer>
-	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const form = document.getElementById('contactForm');
-		const msg = document.getElementById('formMessage');
-		form.addEventListener('submit', async function(e) {
-			e.preventDefault();
-			const formData = new FormData(form);
-			try {
-				const res = await fetch('/', {
-					method: 'POST',
-					body: formData
-				});
-				if (res.ok) {
-					msg.textContent = 'Your message was sent successfully!';
-					msg.className = 'form-message success';
-					msg.style.display = 'block';
-					form.reset();
-				} else {
-					msg.textContent = 'Failed to send message.';
-					msg.className = 'form-message error';
-					msg.style.display = 'block';
-				}
-			} catch (err) {
-				msg.textContent = 'Server error. Please try again later.';
-				msg.className = 'form-message error';
-				msg.style.display = 'block';
-			}
-			setTimeout(() => { msg.style.display = 'none'; }, 4000);
-		});
-	});
-	</script>
+  <header class="main-header">
+    <div class="container header-flex">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#top" class="smooth-scroll">Home</a></li>
+          <li><a href="#about" class="smooth-scroll">About</a></li>
+          <li><a href="#projects" class="smooth-scroll">Projects</a></li>
+          <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-section hero-bg">
+    <div class="container hero-flex">
+      <div class="hero-content">
+        <h1>Max Halfin</h1>
+        <p class="hero-desc">Welcome to my official portfolio website!</p>
+      </div>
+      <div class="hero-image">
+        <img src="assets/profile.png" alt="Max Halfin" class="profile-pic-hero">
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2>About Me</h2>
+        <h4>Your future tech innovator.</h4>
+        <p>
+          I'm a B.Sc. student in Information Systems (Data Science), passionate about building real-world apps like XPme.
+          I develop data-driven systems for lottery and stock predictions using React, Python, Java, and AI. 
+          My goal is to transition from security work into a full-time career in software engineering or data science.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <h2>My Projects</h2>
+        <div class="projects-list">
+          <div class="project-card">
+            <h3>PokemonAPI</h3>
+            <p>Collect and present Pokémon data with images, sounds, and advanced filtering.</p>
+            <a href="https://github.com/maxhalfin18/pokemonAPI" target="_blank">
+              <img src="assets/poke.png" alt="PokemonAPI Project" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2>Contact</h2>
+        <span class="contact-subtitle">Feel free to reach out!</span>
+        <form name="contact" method="POST" data-netlify="true" id="contactForm" class="contact-form">
+          <input type="hidden" name="form-name" value="contact">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Type your message..."></textarea>
+          </div>
+          <button type="submit" class="btn hero-btn send-btn">Send</button>
+          <div id="formMessage" class="form-message" style="display:none;"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-flex">
+      <div class="footer-social">
+        <a href="https://www.facebook.com/maxhalfin18" target="_blank">
+          <img src="assets/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/maxhalfin18/" target="_blank">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://github.com/maxhalfin18" target="_blank">
+          <img src="assets/github.png" alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/max-halfin-46b0922b3/" target="_blank">
+          <img src="assets/linkedin.png" alt="LinkedIn" />
+        </a>
+      </div>
+      <div class="footer-copy">&copy; 2025 Max Halfin. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

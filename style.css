@@ -38,12 +38,15 @@ body {
   z-index: 100;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
+  display: flex;
+  justify-content: center;
 }
 .header-flex {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80px;
+  width: 100%;
 }
 .logo {
   font-size: 2.3rem;
@@ -56,10 +59,10 @@ body {
   list-style: none;
   display: flex;
   gap: 2.5rem;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   justify-content: center;
-  width: 100%;
+  width: auto;
 }
 .main-nav a {
   color: var(--white);
@@ -960,4 +963,47 @@ main {
     width: 20px;
     height: 20px;
   }
+}
+
+/* Modal for Excel image */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(36, 48, 61, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  display: block;
+  margin: 5vh auto;
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(67,89,103,0.18);
+  animation: fadeInModal 0.3s;
+}
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.close-modal {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  text-shadow: 0 2px 12px rgba(36,48,61,0.25);
+  transition: color 0.2s;
+}
+.close-modal:hover {
+  color: var(--accent-color);
 }

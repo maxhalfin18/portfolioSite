@@ -26,9 +26,10 @@
       <nav class="main-nav">
         <ul>
           <li><a href="#top" class="smooth-scroll">Home</a></li>
-          <li><a href="#about" class="smooth-scroll">About</a></li>
-          <li><a href="#projects" class="smooth-scroll">Projects</a></li>
-          <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+          <li><a href="#about" class="smooth-scroll">About Me</a></li>
+          <li><a href="#projects" class="smooth-scroll">My Projects</a></li>
+          <li><a href="#certifications" class="smooth-scroll">My Certifications</a></li>
+          <li><a href="#contact" class="smooth-scroll">Contact Me</a></li>
         </ul>
       </nav>
     </div>
@@ -90,6 +91,7 @@
         <div class="projects-list">
           <div class="project-card">
             <h3>PokemonAPI</h3>
+            <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2025</span>
             <p>Collect and present Pokémon data with images, sounds, and advanced filtering.</p>
             <a href="https://github.com/maxhalfin18/pokemonAPI" target="_blank">
               <img src="assets/poke2.png" alt="PokemonAPI Project" />
@@ -97,10 +99,25 @@
           </div>
           <div class="project-card">
             <h3>portfolioSite</h3>
+            <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2025</span>
             <p>Personal portfolio website to showcase projects and contact me directly.</p>
             <a href="https://github.com/maxhalfin18/portfolioSite" target="_blank">
               <img src="assets/s1.png" alt="portfolioSite Project" />
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section projects-section">
+      <div class="container">
+        <h2>My Certifications</h2>
+        <div class="projects-list">
+          <div class="project-card">
+            <h3>Advanced Excel Course</h3>
+            <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2024</span>
+            <p>Completed the Advanced Excel course by Campus IL, focusing on data analysis, Pivot Tables, advanced functions (VLOOKUP, INDEX/MATCH, etc.), and efficient spreadsheet management. Gained hands-on experience through exercises and passed the final exam with certification.</p>
+            <img src="assets/excel.png" alt="Advanced Excel Certification" class="excel-cert-img" style="display: block; margin-left: 0; margin-right: auto; width: 220px; border-radius: 12px; box-shadow: 0 2px 12px rgba(67,89,103,0.10); cursor: pointer; transition: transform 0.2s;" />
           </div>
         </div>
       </div>
@@ -151,7 +168,32 @@
     </div>
   </footer>
 
+  <div id="excelModal" class="modal">
+    <span class="close-modal" id="closeExcelModal">&times;</span>
+    <img class="modal-content" id="modalExcelImg" src="assets/excel.png" alt="Advanced Excel Certification" />
+  </div>
+
   <script src="script.js"></script>
   <script src="nagishli.js" defer></script>
+  <script>
+    // Modal logic for Excel image
+    const excelImg = document.querySelector('.excel-cert-img');
+    const modal = document.getElementById('excelModal');
+    const modalImg = document.getElementById('modalExcelImg');
+    const closeModal = document.getElementById('closeExcelModal');
+    if (excelImg && modal && closeModal) {
+      excelImg.onclick = function() {
+        modal.style.display = 'block';
+      }
+      closeModal.onclick = function() {
+        modal.style.display = 'none';
+      }
+      modal.onclick = function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      }
+    }
+  </script>
 </body>
 </html>

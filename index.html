@@ -26,6 +26,16 @@
       <button id="darkModeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.7rem; margin-right: 18px; color: #fff;">
         <img id="darkModeIcon" src="assets/moon.png" alt="Toggle dark mode" style="width: 28px; height: 28px; transition: filter 0.2s;" />
       </button>
+      <div class="lang-switcher-wrapper">
+        <button id="langSwitcherBtn" aria-label="Change language" class="lang-switcher-btn">
+          <img id="langSwitcherIcon" src="assets/us.png" alt="English" style="width: 28px; height: 28px;" />
+        </button>
+        <div id="langDropdown" class="lang-dropdown" style="display: none;">
+          <button class="lang-option" data-lang="en"><img src="assets/us.png" alt="English" style="width: 24px; height: 24px;" /></button>
+          <button class="lang-option" data-lang="he"><img src="assets/isr.png" alt="עברית" style="width: 24px; height: 24px;" /></button>
+          <button class="lang-option" data-lang="ar"><img src="assets/arab.png" alt="العربية" style="width: 24px; height: 24px;" /></button>
+        </div>
+      </div>
       <nav class="main-nav">
         <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
           <span class="nav-toggle-bar bar1"></span>

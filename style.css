@@ -1273,3 +1273,57 @@ body.dark-mode {
 body.dark-mode #darkModeToggle {
   color: #ffe066;
 }
+.lang-switcher-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 18px;
+}
+.lang-switcher-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+.lang-dropdown {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(67,89,103,0.13);
+  z-index: 9999;
+  min-width: 60px;
+  padding: 0.3rem 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.lang-option {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: background 0.2s;
+}
+.lang-option:hover {
+  background: #f0f4f8;
+}
+.lang-switcher-btn img,
+.lang-dropdown img {
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(67,89,103,0.10);
+  background: #fff;
+  object-fit: cover;
+}

@@ -209,6 +209,13 @@
         };
       });
     }
+    // Always scroll to top on mobile refresh
+    if (window.innerWidth <= 900 && window.location.hash) {
+      window.scrollTo(0, 0);
+      if (window.location.hash !== '#top') {
+        window.location.hash = '#top';
+      }
+    }
     // Modal logic for Excel image
     const excelImg = document.querySelector('.excel-cert-img');
     const modal = document.getElementById('excelModal');

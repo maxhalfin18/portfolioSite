@@ -24,15 +24,22 @@
   <header class="main-header">
     <div class="container header-flex">
       <nav class="main-nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
         <ul>
           <li><a href="#top" class="smooth-scroll">Home</a></li>
-          <li><a href="#about" class="smooth-scroll">About Me</a></li>
-          <li><a href="#projects" class="smooth-scroll">My Projects</a></li>
-          <li><a href="#certifications" class="smooth-scroll">My Certifications</a></li>
-          <li><a href="#contact" class="smooth-scroll">Contact Me</a></li>
+          <li><a href="#about" class="smooth-scroll">About</a></li>
+          <li><a href="#education" class="smooth-scroll">Education</a></li>
+          <li><a href="#projects" class="smooth-scroll">Projects</a></li>
+          <li><a href="#certifications" class="smooth-scroll">Certifications</a></li>
+          <li><a href="#contact" class="smooth-scroll">Contact</a></li>
         </ul>
       </nav>
     </div>
+    <div id="navOverlay"></div>
   </header>
 
   <section class="hero-section hero-bg">
@@ -59,7 +66,12 @@
           I strongly believe in continuous learning, building with purpose, and combining technical depth with creative thinking.<br>
           I'm always open to feedback, collaboration, or connecting with like-minded people who are passionate about tech and innovation
         </p>
-        <h4>Education</h4>
+      </div>
+    </section>
+
+    <section id="education" class="section projects-section">
+      <div class="container">
+        <h2>Education</h2>
         <div class="projects-list">
           <div class="project-card">
             <h3>The Max Stern Yezreel Valley College</h3>
@@ -176,6 +188,27 @@
   <script src="script.js"></script>
   <script src="nagishli.js" defer></script>
   <script>
+    // Hamburger menu logic
+    const navToggle = document.getElementById('navToggle');
+    const navUl = document.querySelector('.main-nav ul');
+    const navOverlay = document.getElementById('navOverlay');
+    if (navToggle && navUl && navOverlay) {
+      navToggle.onclick = function() {
+        navUl.classList.toggle('open');
+        navOverlay.classList.toggle('active');
+      };
+      navOverlay.onclick = function() {
+        navUl.classList.remove('open');
+        navOverlay.classList.remove('active');
+      };
+      // Close menu when clicking a nav link
+      navUl.querySelectorAll('a').forEach(link => {
+        link.onclick = function() {
+          navUl.classList.remove('open');
+          navOverlay.classList.remove('active');
+        };
+      });
+    }
     // Modal logic for Excel image
     const excelImg = document.querySelector('.excel-cert-img');
     const modal = document.getElementById('excelModal');

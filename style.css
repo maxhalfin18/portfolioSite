@@ -791,22 +791,22 @@ main {
 
 /* Landscape mode for mobile devices */
 @media (max-width: 900px) and (orientation: landscape) {
-  body, html {
-    width: 100vw;
-    min-width: 0;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: var(--section-bg);
+  html, body {
+    width: 100vw !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    background: var(--section-bg) !important;
   }
   .container {
-    max-width: 100vw;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   .hero-section.hero-bg {
-    border-radius: 0;
+    border-radius: 0 !important;
   }
   .hero-flex {
     flex-direction: row;
@@ -1121,8 +1121,8 @@ main {
 }
 @media (max-width: 900px) {
   .main-nav ul {
-    overflow-y: auto;
-    max-height: 100vh;
-    min-height: 0;
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+    min-height: 0 !important;
   }
 }

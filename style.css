@@ -1204,8 +1204,7 @@ body.dark-mode {
   color: #e3e6eb;
 }
 .dark-mode .hero-section.hero-bg {
-  /* Remove background override so the image appears in both modes */
-  /* background: #23272f; */
+  background: url('assets/s2.png') center center/contain no-repeat, #23272f !important;
 }
 .dark-mode .hero-bg-animated {
   opacity: 0.7;

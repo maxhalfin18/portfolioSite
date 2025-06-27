@@ -478,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectsH2) projectsH2.innerHTML = translations[lang].projectsTitle;
     
     // Update all project cards in all slides
-    const allProjCards = document.querySelectorAll('#projects .project-card');
+    const allProjCards = document.querySelectorAll('#projects .projects-slide .project-card');
     if (allProjCards.length >= 3) {
       // Card 1 (PokemonAPI) - in slide 0
       const p1h3 = allProjCards[0].querySelector('h3');
@@ -605,20 +605,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     // Update project descriptions
-    const project1Desc = document.querySelector('.project-card p');
-    if (project1Desc && !project1Desc.id) {
-      project1Desc.textContent = translations[lang].project1[2];
-    }
-    
-    const project2Desc = document.querySelectorAll('.project-card p')[1];
-    if (project2Desc && !project2Desc.id) {
-      project2Desc.textContent = translations[lang].project2[2];
-    }
-    
-    const project3Desc = document.getElementById('project3-desc');
-    if (project3Desc) {
-      project3Desc.textContent = translations[lang].project3[2];
-    }
+    // const project1Desc = document.querySelector('.project-card p');
+    // if (project1Desc && !project1Desc.id) {
+    //   project1Desc.textContent = translations[lang].project1[2];
+    // }
+    //
+    // const project2Desc = document.querySelectorAll('.project-card p')[1];
+    // if (project2Desc && !project2Desc.id) {
+    //   project2Desc.textContent = translations[lang].project2[2];
+    // }
+    //
+    // const project3Desc = document.getElementById('project3-desc');
+    // if (project3Desc) {
+    //   project3Desc.textContent = translations[lang].project3[2];
+    // }
     
     // Update navigation logic for RTL languages
     updateNavigationLogic();
@@ -1257,6 +1257,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  setLanguage(currentLang);
+  // בדיקה: האם האלמנט edu1-degree קיים ומה התוכן שלו
+  const edu1DegreeTest = document.getElementById('edu1-degree');
+  if (edu1DegreeTest) {
+    console.log('edu1-degree נמצא! התוכן:', edu1DegreeTest.innerHTML);
+  } else {
+    console.warn('edu1-degree לא נמצא בדף!');
+  }
 }); 
 
 window.onload = function() { window.scrollTo(0, 0); }; 

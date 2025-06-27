@@ -787,6 +787,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalSlides = 2; // 2 slides: slide 0 (2 projects) and slide 1 (1 project)
   let navigationInitialized = false; // Flag to prevent multiple initializations
   let globalClickHandler = null; // Store reference to global click handler
+  
+  // Swipe gesture variables
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let isSwiping = false;
 
   function showSlide(slideIndex) {
     console.log('Showing slide:', slideIndex);
@@ -885,6 +890,22 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Found prevBtn:', !!prevBtn);
       console.log('Found nextBtn:', !!nextBtn);
       console.log('Current direction:', document.body.getAttribute('dir'));
+      
+      // Check if mobile device
+      const isMobile = window.innerWidth <= 900;
+      
+      // Initialize swipe gestures for mobile
+      if (isMobile) {
+        initializeSwipeGestures();
+        
+        // Hide arrows on mobile
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+      } else {
+        // Show arrows on desktop
+        if (prevBtn) prevBtn.style.display = 'flex';
+        if (nextBtn) nextBtn.style.display = 'flex';
+      }
       
       // Create a single, reliable global click handler
       globalClickHandler = function(e) {
@@ -1263,4 +1284,123 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(`Dot ${index}:`, dot.classList.contains('active') ? 'ACTIVE' : 'inactive');
     });
   };
+
+  // Test swipe gestures
+  window.testSwipeGestures = function() {
+    const projectsContainer = document.querySelector('.projects-container');
+    const isMobile = window.innerWidth <= 900;
+    
+    console.log('=== Swipe Gestures Test ===');
+    console.log('Is mobile device:', isMobile);
+    console.log('Projects container exists:', !!projectsContainer);
+    console.log('Touch events supported:', 'ontouchstart' in window);
+    
+    if (projectsContainer) {
+      console.log('Container touch-action:', window.getComputedStyle(projectsContainer).touchAction);
+      console.log('Container has touch listeners:', projectsContainer.hasAttribute('data-swipe-initialized'));
+    }
+    
+    // Simulate a swipe
+    console.log('To test swipe:');
+    console.log('- On mobile: Swipe left/right on the projects area');
+    console.log('- Current direction:', document.body.getAttribute('dir'));
+    console.log('- RTL: Swipe left = next, Swipe right = previous');
+    console.log('- LTR: Swipe left = previous, Swipe right = next');
+  };
+
+  // Swipe gesture functions
+  function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    isSwiping = true;
+  }
+
+  function handleTouchMove(e) {
+    if (!isSwiping) return;
+    e.preventDefault(); // Prevent scrolling while swiping
+  }
+
+  function handleTouchEnd(e) {
+    if (!isSwiping) return;
+    
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    isSwiping = false;
+  }
+
+  function handleSwipe() {
+    const swipeThreshold = 50; // Minimum distance for a swipe
+    const swipeDistance = touchEndX - touchStartX;
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    
+    console.log('Swipe detected:', swipeDistance, 'Direction:', currentDir);
+    
+    if (Math.abs(swipeDistance) < swipeThreshold) {
+      return; // Swipe too short, ignore
+    }
+    
+    if (currentDir === 'rtl') {
+      // In RTL: swipe left = next, swipe right = previous
+      if (swipeDistance > 0) {
+        // Swipe right = previous
+        if (currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+      } else {
+        // Swipe left = next
+        if (currentSlide < totalSlides - 1) {
+          showSlide(currentSlide + 1);
+        }
+      }
+    } else {
+      // In LTR: swipe left = previous, swipe right = next
+      if (swipeDistance > 0) {
+        // Swipe right = next
+        if (currentSlide < totalSlides - 1) {
+          showSlide(currentSlide + 1);
+        }
+      } else {
+        // Swipe left = previous
+        if (currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+      }
+    }
+  }
+
+  // Initialize swipe gestures
+  function initializeSwipeGestures() {
+    const projectsContainer = document.querySelector('.projects-container');
+    if (!projectsContainer) return;
+    
+    console.log('Initializing swipe gestures for mobile');
+    
+    // Add touch event listeners
+    projectsContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+    projectsContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+    projectsContainer.addEventListener('touchend', handleTouchEnd, { passive: false });
+    
+    // Add visual feedback for swipe
+    projectsContainer.style.touchAction = 'pan-y'; // Allow vertical scrolling but handle horizontal swipes
+  }
+
+  // Handle window resize for responsive navigation
+  function handleWindowResize() {
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    const isMobile = window.innerWidth <= 900;
+    
+    if (isMobile) {
+      // Hide arrows and ensure swipe gestures are active
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      initializeSwipeGestures();
+    } else {
+      // Show arrows on desktop
+      if (prevBtn) prevBtn.style.display = 'flex';
+      if (nextBtn) nextBtn.style.display = 'flex';
+    }
+  }
+
+  // Add window resize listener
+  window.addEventListener('resize', handleWindowResize);
 }); 

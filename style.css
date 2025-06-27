@@ -498,6 +498,21 @@ main {
   .resume-btn {
     margin-bottom: 0.5rem;
   }
+  .nav-arrow {
+    display: none !important;
+  }
+  
+  .projects-container {
+    touch-action: pan-y !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  .projects-slide {
+    touch-action: pan-y !important;
+  }
 }
 @media (max-width: 600px) {
   .container {

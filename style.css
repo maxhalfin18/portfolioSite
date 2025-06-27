@@ -11,6 +11,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overflow-x: hidden !important;
 }
 body {
   font-family: 'Poppins', Arial, sans-serif;
@@ -21,6 +22,7 @@ body {
   opacity: 0;
   animation: fadeInBody 1.2s ease-in-out forwards;
   transition: background 0.4s, color 0.4s;
+  overflow-x: hidden !important;
 }
 @keyframes fadeInBody {
   to { opacity: 1; }
@@ -612,7 +614,7 @@ main {
   /* Projects Navigation Mobile */
   .projects-navigation {
     position: relative !important;
-    margin: 0 -10px !important;
+    margin: 0 !important;
     overflow-x: visible !important;
   }
   
@@ -740,6 +742,12 @@ main {
   }
   .footer-copy {
     font-size: 0.9rem;
+  }
+  .projects-navigation {
+    margin: 0 !important;
+  }
+  .nav-toggle {
+    z-index: 11001 !important;
   }
 }
 @media (max-width: 400px) {

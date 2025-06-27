@@ -22,8 +22,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
-  console.log(`Mobile access: http://172.19.144.1:${PORT}`);
-  console.log('Make sure your mobile device is on the same WiFi network!');
 }); 

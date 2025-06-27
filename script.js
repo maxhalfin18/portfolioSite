@@ -782,148 +782,97 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
   }
 
-  // Projects Navigation System
+  // Global variables for project navigation
   let currentSlide = 0;
   const totalSlides = 2; // 2 slides: slide 0 (2 projects) and slide 1 (1 project)
   let navigationInitialized = false; // Flag to prevent multiple initializations
+
+  // Function to show a specific slide
+  function showSlide(slideIndex) {
+    console.log('Showing slide:', slideIndex);
+    const slides = document.querySelectorAll('.projects-slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    
+    // Show the target slide
+    if (slides[slideIndex]) {
+      slides[slideIndex].classList.add('active');
+    }
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === slideIndex);
+    });
+    
+    // Update current slide variable
+    currentSlide = slideIndex;
+    
+    // Update button states
+    updateButtonStates();
+    
+    console.log('Slide shown successfully. Current slide:', currentSlide);
+  }
+
+  // Function to go to next slide
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      showSlide(currentSlide + 1);
+    }
+  }
+
+  // Function to go to previous slide
+  function prevSlide() {
+    if (currentSlide > 0) {
+      showSlide(currentSlide - 1);
+    }
+  }
+
+  // Projects Navigation System
   let globalClickHandler = null; // Store reference to global click handler
   
   // Initialize navigation when DOM is ready
   function initializeProjectNavigation() {
     console.log('Initializing project navigation...');
-    
-    // Remove existing global click handler if it exists
-    if (globalClickHandler) {
-      document.removeEventListener('click', globalClickHandler);
-      globalClickHandler = null;
-    }
-    
     setTimeout(() => {
       const prevBtn = document.getElementById('prevProject');
       const nextBtn = document.getElementById('nextProject');
       const dots = document.querySelectorAll('.dot');
-      
-      console.log('Found prevBtn:', !!prevBtn);
-      console.log('Found nextBtn:', !!nextBtn);
-      console.log('Current direction:', document.body.getAttribute('dir'));
-      
-      // Check if mobile device
-      const isMobile = window.innerWidth <= 900;
-      
-      // Initialize swipe gestures for mobile
-      if (isMobile) {
-        initializeSwipeGestures();
-        
-        // Hide arrows on mobile
-        if (prevBtn) prevBtn.style.display = 'none';
-        if (nextBtn) nextBtn.style.display = 'none';
-      } else {
-        // Show arrows on desktop
-        if (prevBtn) prevBtn.style.display = 'flex';
-        if (nextBtn) nextBtn.style.display = 'flex';
-      }
-      
-      // Create a single, reliable global click handler
-      globalClickHandler = function(e) {
-        // Handle left arrow
-        if (e.target && e.target.id === 'prevProject') {
-          e.preventDefault();
-          e.stopPropagation();
-          console.log('Left arrow clicked via delegation');
-          
-          const dir = document.body.getAttribute('dir') || 'ltr';
-          console.log('Direction:', dir);
-          
-          if (dir === 'rtl') {
-            console.log('RTL: Left arrow = Next slide');
-            if (currentSlide < totalSlides - 1) {
-              showSlide(currentSlide + 1);
-            }
-          } else {
-            console.log('LTR: Left arrow = Previous slide');
-            if (currentSlide > 0) {
-              showSlide(currentSlide - 1);
-            }
-          }
-          return;
-        }
-        
-        // Handle right arrow
-        if (e.target && e.target.id === 'nextProject') {
-          e.preventDefault();
-          e.stopPropagation();
-          console.log('Right arrow clicked via delegation');
-          
-          const dir = document.body.getAttribute('dir') || 'ltr';
-          console.log('Direction:', dir);
-          
-          if (dir === 'rtl') {
-            console.log('RTL: Right arrow = Previous slide');
-            if (currentSlide > 0) {
-              showSlide(currentSlide - 1);
-            }
-          } else {
-            console.log('LTR: Right arrow = Next slide');
-            if (currentSlide < totalSlides - 1) {
-              showSlide(currentSlide + 1);
-            }
-          }
-          return;
-        }
-        
-        // Handle dots
-        if (e.target && e.target.classList.contains('dot')) {
-          e.preventDefault();
-          e.stopPropagation();
-          const slideIndex = parseInt(e.target.getAttribute('data-slide') || '0');
-          console.log('Dot clicked via delegation:', slideIndex);
-          showSlide(slideIndex);
-          return;
-        }
-      };
-      
-      // Add the global click handler
-      document.addEventListener('click', globalClickHandler, true); // Use capture phase for better reliability
-      
-      // Also add direct event listeners as backup
+      // Always show arrows
+      if (prevBtn) prevBtn.style.display = 'flex';
+      if (nextBtn) nextBtn.style.display = 'flex';
+      // Remove old listeners by cloning
       if (prevBtn) {
-        prevBtn.addEventListener('click', function(e) {
+        const newPrev = prevBtn.cloneNode(true);
+        prevBtn.parentNode.replaceChild(newPrev, prevBtn);
+        newPrev.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          console.log('Left arrow clicked directly');
-          
+          console.log('Left arrow clicked!');
           const dir = document.body.getAttribute('dir') || 'ltr';
           if (dir === 'rtl') {
-            if (currentSlide < totalSlides - 1) {
-              showSlide(currentSlide + 1);
-            }
+            if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1);
           } else {
-            if (currentSlide > 0) {
-              showSlide(currentSlide - 1);
-            }
+            if (currentSlide > 0) showSlide(currentSlide - 1);
           }
         });
       }
-      
       if (nextBtn) {
-        nextBtn.addEventListener('click', function(e) {
+        const newNext = nextBtn.cloneNode(true);
+        nextBtn.parentNode.replaceChild(newNext, nextBtn);
+        newNext.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          console.log('Right arrow clicked directly');
-          
+          console.log('Right arrow clicked!');
           const dir = document.body.getAttribute('dir') || 'ltr';
           if (dir === 'rtl') {
-            if (currentSlide > 0) {
-              showSlide(currentSlide - 1);
-            }
+            if (currentSlide > 0) showSlide(currentSlide - 1);
           } else {
-            if (currentSlide < totalSlides - 1) {
-              showSlide(currentSlide + 1);
-            }
+            if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1);
           }
         });
       }
-      
       // Initialize first slide only if no slide is currently active
       const activeSlide = document.querySelector('.projects-slide.active');
       if (!activeSlide) {
@@ -933,7 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateButtonStates();
       }
       navigationInitialized = true;
-      console.log('Navigation initialization complete with dual event handling');
+      console.log('Navigation initialization complete (restored version)');
     }, 500);
   }
 

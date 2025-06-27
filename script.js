@@ -351,75 +351,120 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function setLanguage(lang) {
+    console.log('Setting language to:', lang);
+    // Check if translations object exists and has the required language
+    if (!translations || !translations[lang]) {
+      console.error('Translations not found for language:', lang);
+      return;
+    }
     document.body.setAttribute('dir', (lang === 'he' || lang === 'ar' || lang === 'am') ? 'rtl' : 'ltr');
     // Nav
-    document.querySelectorAll('.main-nav ul li a').forEach((el, i) => {
-      el.innerHTML = translations[lang].nav[i];
-    });
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
+    if (navLinks.length && translations[lang].nav) {
+      navLinks.forEach((el, i) => { if (translations[lang].nav[i]) el.innerHTML = translations[lang].nav[i]; });
+    }
     // Hero
-    document.querySelector('.hero-desc').innerHTML = translations[lang].heroDesc;
-    document.querySelector('.resume-btn').innerHTML = translations[lang].resume;
+    const heroDesc = document.querySelector('.hero-desc');
+    if (heroDesc) heroDesc.innerHTML = translations[lang].heroDesc;
+    const resumeBtn = document.querySelector('.resume-btn');
+    if (resumeBtn) resumeBtn.innerHTML = translations[lang].resume;
     // Name (h1)
     const heroName = document.querySelector('.hero-content h1');
     if (heroName) heroName.innerHTML = translations[lang].name;
     // About
-    document.querySelector('#about h2').innerHTML = translations[lang].aboutTitle;
-    document.querySelector('#about h4').innerHTML = translations[lang].aboutSummary;
-    document.querySelector('#about p').innerHTML = translations[lang].aboutText;
+    const aboutH2 = document.querySelector('#about h2');
+    if (aboutH2) aboutH2.innerHTML = translations[lang].aboutTitle;
+    const aboutH4 = document.querySelector('#about h4');
+    if (aboutH4) aboutH4.innerHTML = translations[lang].aboutSummary;
+    const aboutP = document.querySelector('#about p');
+    if (aboutP) aboutP.innerHTML = translations[lang].aboutText;
     // Education
-    document.querySelector('#education h2').innerHTML = translations[lang].educationTitle;
-    // Card 1
-    document.getElementById('edu1-title').innerHTML = translations[lang].education1[0];
-    document.getElementById('edu1-years').innerHTML = translations[lang].education1[1];
-    document.getElementById('edu1-degree').innerHTML = translations[lang].education1[2];
-    document.getElementById('edu1-desc1').innerHTML = translations[lang].education1[3];
-    document.getElementById('edu1-desc2').innerHTML = translations[lang].education1[4];
-    // Card 2
-    document.getElementById('edu2-title').innerHTML = translations[lang].education2[0];
-    document.getElementById('edu2-years').innerHTML = translations[lang].education2[1];
-    document.getElementById('edu2-degree').innerHTML = translations[lang].education2[2];
-    document.getElementById('edu2-desc1').innerHTML = translations[lang].education2[3];
-    document.getElementById('edu2-desc2').innerHTML = translations[lang].education2[4];
+    const eduH2 = document.querySelector('#education h2');
+    if (eduH2) eduH2.innerHTML = translations[lang].educationTitle;
+    const edu1Title = document.getElementById('edu1-title');
+    if (edu1Title) edu1Title.innerHTML = translations[lang].education1[0];
+    const edu1Years = document.getElementById('edu1-years');
+    if (edu1Years) edu1Years.innerHTML = translations[lang].education1[1];
+    const edu1Degree = document.getElementById('edu1-degree');
+    if (edu1Degree) edu1Degree.innerHTML = translations[lang].education1[2];
+    const edu1Desc1 = document.getElementById('edu1-desc1');
+    if (edu1Desc1) edu1Desc1.innerHTML = translations[lang].education1[3];
+    const edu1Desc2 = document.getElementById('edu1-desc2');
+    if (edu1Desc2) edu1Desc2.innerHTML = translations[lang].education1[4];
+    const edu2Title = document.getElementById('edu2-title');
+    if (edu2Title) edu2Title.innerHTML = translations[lang].education2[0];
+    const edu2Years = document.getElementById('edu2-years');
+    if (edu2Years) edu2Years.innerHTML = translations[lang].education2[1];
+    const edu2Degree = document.getElementById('edu2-degree');
+    if (edu2Degree) edu2Degree.innerHTML = translations[lang].education2[2];
+    const edu2Desc1 = document.getElementById('edu2-desc1');
+    if (edu2Desc1) edu2Desc1.innerHTML = translations[lang].education2[3];
+    const edu2Desc2 = document.getElementById('edu2-desc2');
+    if (edu2Desc2) edu2Desc2.innerHTML = translations[lang].education2[4];
     // Projects
-    document.querySelector('#projects h2').innerHTML = translations[lang].projectsTitle;
+    const projectsH2 = document.querySelector('#projects h2');
+    if (projectsH2) projectsH2.innerHTML = translations[lang].projectsTitle;
     const projCards = document.querySelectorAll('#projects .project-card');
-    if (projCards.length === 2) {
+    if (projCards.length >= 2) {
       // Card 1
-      projCards[0].querySelector('h3').innerHTML = translations[lang].project1[0];
-      projCards[0].querySelector('span').innerHTML = translations[lang].project1[1];
-      projCards[0].querySelectorAll('p')[0].innerHTML = translations[lang].project1[2];
+      const p1h3 = projCards[0].querySelector('h3');
+      if (p1h3) p1h3.innerHTML = translations[lang].project1[0];
+      const p1span = projCards[0].querySelector('span');
+      if (p1span) p1span.innerHTML = translations[lang].project1[1];
+      const p1p = projCards[0].querySelectorAll('p')[0];
+      if (p1p) p1p.innerHTML = translations[lang].project1[2];
       const btns1 = projCards[0].querySelectorAll('.btn');
       if (btns1.length >= 2) {
-        btns1[0].innerHTML = translations[lang].project1[3];
-        btns1[1].innerHTML = translations[lang].project1[4];
+        if (translations[lang].project1[3]) btns1[0].innerHTML = translations[lang].project1[3];
+        if (translations[lang].project1[4]) btns1[1].innerHTML = translations[lang].project1[4];
       }
       // Card 2
-      projCards[1].querySelector('h3').innerHTML = translations[lang].project2[0];
-      projCards[1].querySelector('span').innerHTML = translations[lang].project2[1];
-      projCards[1].querySelectorAll('p')[0].innerHTML = translations[lang].project2[2];
+      const p2h3 = projCards[1].querySelector('h3');
+      if (p2h3) p2h3.innerHTML = translations[lang].project2[0];
+      const p2span = projCards[1].querySelector('span');
+      if (p2span) p2span.innerHTML = translations[lang].project2[1];
+      const p2p = projCards[1].querySelectorAll('p')[0];
+      if (p2p) p2p.innerHTML = translations[lang].project2[2];
       const btns2 = projCards[1].querySelectorAll('.btn');
       if (btns2.length >= 2) {
-        btns2[0].innerHTML = translations[lang].project2[3];
-        btns2[1].innerHTML = translations[lang].project2[4];
+        if (translations[lang].project2[3]) btns2[0].innerHTML = translations[lang].project2[3];
+        if (translations[lang].project2[4]) btns2[1].innerHTML = translations[lang].project2[4];
       }
     }
     // Certifications
-    document.querySelector('#certifications h2').innerHTML = translations[lang].certificationsTitle;
+    const certH2 = document.querySelector('#certifications h2');
+    if (certH2) certH2.innerHTML = translations[lang].certificationsTitle;
     const certCard = document.querySelector('#certifications .project-card');
-    certCard.querySelector('h3').innerHTML = translations[lang].cert1[0];
-    certCard.querySelector('span').innerHTML = translations[lang].cert1[1];
-    certCard.querySelectorAll('p')[0].innerHTML = translations[lang].cert1[2];
+    if (certCard) {
+      const certH3 = certCard.querySelector('h3');
+      if (certH3) certH3.innerHTML = translations[lang].cert1[0];
+      const certSpan = certCard.querySelector('span');
+      if (certSpan) certSpan.innerHTML = translations[lang].cert1[1];
+      const certP = certCard.querySelectorAll('p')[0];
+      if (certP) certP.innerHTML = translations[lang].cert1[2];
+    }
     // Contact
-    document.querySelector('#contact h2').innerHTML = translations[lang].contactTitle;
-    document.querySelector('.contact-subtitle').innerHTML = translations[lang].contactSubtitle;
+    const contactH2 = document.querySelector('#contact h2');
+    if (contactH2) contactH2.innerHTML = translations[lang].contactTitle;
+    const contactSubtitle = document.querySelector('.contact-subtitle');
+    if (contactSubtitle) contactSubtitle.innerHTML = translations[lang].contactSubtitle;
     const form = document.getElementById('contactForm');
-    form.querySelector('label[for="name"]').innerHTML = translations[lang].form[0];
-    form.querySelector('#name').placeholder = translations[lang].form[1];
-    form.querySelector('label[for="email"]').innerHTML = translations[lang].form[2];
-    form.querySelector('#email').placeholder = translations[lang].form[3];
-    form.querySelector('label[for="message"]').innerHTML = translations[lang].form[4];
-    form.querySelector('#message').placeholder = translations[lang].form[5];
-    form.querySelector('.send-btn').innerHTML = translations[lang].form[6];
+    if (form) {
+      const labelName = form.querySelector('label[for="name"]');
+      if (labelName) labelName.innerHTML = translations[lang].form[0];
+      const inputName = form.querySelector('#name');
+      if (inputName) inputName.placeholder = translations[lang].form[1];
+      const labelEmail = form.querySelector('label[for="email"]');
+      if (labelEmail) labelEmail.innerHTML = translations[lang].form[2];
+      const inputEmail = form.querySelector('#email');
+      if (inputEmail) inputEmail.placeholder = translations[lang].form[3];
+      const labelMsg = form.querySelector('label[for="message"]');
+      if (labelMsg) labelMsg.innerHTML = translations[lang].form[4];
+      const inputMsg = form.querySelector('#message');
+      if (inputMsg) inputMsg.placeholder = translations[lang].form[5];
+      const sendBtn = form.querySelector('.send-btn');
+      if (sendBtn) sendBtn.innerHTML = translations[lang].form[6];
+    }
     // Footer
     const footerCopy = document.querySelector('.footer-copy');
     if (footerCopy) {
@@ -478,21 +523,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langSwitcherBtn');
   const langDropdown = document.getElementById('langDropdown');
   
-  console.log('Language elements found:', { langBtn: !!langBtn, langDropdown: !!langDropdown });
-  
   if (langBtn && langDropdown) {
     langBtn.addEventListener('click', e => {
       e.stopPropagation();
-      console.log('Language button clicked');
       
       // Simple toggle logic
       if (langDropdown.style.display === 'flex') {
         langDropdown.style.display = 'none';
-        console.log('Dropdown hidden');
       } else {
         // Show dropdown
         langDropdown.style.display = 'flex';
-        console.log('Dropdown shown');
         
         // Generate content only if not already generated
         if (!langDropdown.querySelector('.lang-option')) {
@@ -527,13 +567,11 @@ document.addEventListener('DOMContentLoaded', () => {
           ].join('');
           
           langDropdown.innerHTML = gridHTML;
-          console.log('Generated dropdown HTML');
           
           // Re-attach click listeners
           langDropdown.querySelectorAll('.lang-option').forEach(btn => {
             btn.addEventListener('click', e => {
               const lang = btn.getAttribute('data-lang');
-              console.log('Language selected:', lang);
               setLanguage(lang);
               localStorage.setItem('lang', lang);
               langDropdown.style.display = 'none';
@@ -599,11 +637,38 @@ document.addEventListener('DOMContentLoaded', () => {
     langDropdown.addEventListener('click', e => {
       e.stopPropagation();
     });
-  } else {
-    console.error('Language switcher elements not found!');
   }
 
   // On page load, set language from localStorage if exists
   const savedLang = localStorage.getItem('lang') || 'en';
-  setLanguage(savedLang);
+  console.log('Loading saved language:', savedLang);
+  
+  // Function to set language with retry
+  function setLanguageWithRetry(lang, retries = 3) {
+    if (retries <= 0) {
+      console.error('Failed to set language after retries');
+      return;
+    }
+    
+    try {
+      setLanguage(lang);
+      console.log('Language set to:', lang);
+    } catch (error) {
+      console.log('Retrying language set, attempts left:', retries - 1);
+      setTimeout(() => setLanguageWithRetry(lang, retries - 1), 200);
+    }
+  }
+  
+  // Ensure DOM is fully loaded before setting language
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        setLanguageWithRetry(savedLang);
+      }, 100);
+    });
+  } else {
+    setTimeout(() => {
+      setLanguageWithRetry(savedLang);
+    }, 100);
+  }
 }); 

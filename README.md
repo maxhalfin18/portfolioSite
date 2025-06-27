@@ -5,6 +5,13 @@ This is my personal portfolio site designed to showcase selected projects, certi
 ## Features
 
 - **Modern, responsive web design** using HTML, CSS, and JavaScript
+- **Multi-language support** with 12 languages:
+  - English, Hebrew, Arabic, Russian, Amharic
+  - French, Spanish, German, Italian, Chinese, Japanese, Romanian
+  - Automatic RTL support for Hebrew and Arabic
+  - Language persistence using localStorage
+  - Flag-based language switcher with dropdown
+- **Dark/Light mode toggle** with automatic preference detection and persistence
 - **Project presentation section** with images, live GitHub links, years, and hover effects
 - **Certifications section** with styled cards and images (including modal popup for certificate images)
 - **Education section** with styled cards and institution logos
@@ -22,22 +29,27 @@ This is my personal portfolio site designed to showcase selected projects, certi
 - **Hamburger menu** for mobile navigation with scrollable menu and overlay
 - **Download Resume** button in hero section
 - **Accessibility**: Keyboard navigation, accessible labels, and ARIA attributes
+- **Reveal animations** on scroll for enhanced user experience
 
 ## Technologies Used
 
 - HTML5, CSS3, JavaScript (Vanilla)
 - Node.js + Express (for backend/contact form, if needed)
-- Hosted assets (images, profile, project banners)
+- Hosted assets (images, profile, project banners, language flags)
 
 ## File Structure
 
 ```
 ├── index.html          # Main portfolio page
 ├── style.css           # Styling for all components
-├── script.js           # All JavaScript (navigation, form, etc.)
+├── script.js           # All JavaScript (navigation, form, language switcher, dark mode)
+├── hamburger.js        # Mobile navigation logic
+├── nagishli.js         # Accessibility plugin
 ├── server.js           # Express server (optional)
-├── /assets             # Profile images, logos, banners, favicon, certificates
+├── /assets             # Profile images, logos, banners, favicon, certificates, language flags
 ├── /files              # Downloadable files (e.g., resume)
+├── /docs               # Documentation files
+├── /nl-files           # Accessibility plugin assets
 └── README.md           # Project documentation
 ```
 
@@ -49,6 +61,29 @@ This is my personal portfolio site designed to showcase selected projects, certi
 - **My Projects**: Cards for each project, with year, description, image, and GitHub link
 - **My Certifications**: Cards for certifications, with year, description, and certificate image (click to enlarge)
 - **Contact Me**: Form with validation and error messages
+
+## Language Support
+
+The website supports 12 languages with automatic translation of all content:
+- **English** (default)
+- **Hebrew** (עברית) - RTL support
+- **Arabic** (العربية) - RTL support
+- **Russian** (Русский)
+- **Amharic** (አማርኛ)
+- **French** (Français)
+- **Spanish** (Español)
+- **German** (Deutsch)
+- **Italian** (Italiano)
+- **Chinese** (中文)
+- **Japanese** (日本語)
+- **Romanian** (Română)
+
+## Dark Mode
+
+- Toggle between light and dark themes
+- Automatic detection of system preference
+- Persistence of user choice using localStorage
+- Smooth transitions between themes
 
 ## Deployment & Hosting
 
@@ -65,6 +100,14 @@ The site includes Open Graph and Twitter Card meta tags for beautiful previews w
 ## Favicon
 
 The favicon (tab logo) is set to `assets/tab.png`.
+
+## Accessibility
+
+- Full keyboard navigation support
+- ARIA labels and attributes
+- Screen reader compatibility
+- High contrast mode support
+- Responsive design for all screen sizes
 
 ## Author
 

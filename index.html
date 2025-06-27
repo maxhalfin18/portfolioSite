@@ -112,31 +112,62 @@
     <section id="projects" class="section projects-section">
       <div class="container">
         <h2>My Projects</h2>
-        <div class="projects-list">
-          <div class="project-card reveal">
-            <h3>PokemonAPI</h3>
-            <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2025</span>
-            <p>Collect and present Pokémon data with images, sounds, and advanced filtering.</p>
-            <a href="https://github.com/maxhalfin18/pokemonAPI" target="_blank">
-              <img src="assets/poke2.png" alt="PokemonAPI Project" />
-            </a>
-            <div style="display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem;">
-              <a href="https://github.com/maxhalfin18/pokemonAPI" target="_blank" class="btn hero-btn" style="padding: 0.5rem 1.2rem; font-size: 1rem;">GitHub</a>
-              <a href="https://colab.research.google.com/drive/11piEEIaGOqQmcQ_t_JRdTtRg7aJajfoF?usp=sharing" target="_blank" class="btn hero-btn secondary" style="padding: 0.5rem 1.2rem; font-size: 1rem;">Live Demo</a>
+        <div class="projects-navigation">
+          <button class="nav-arrow nav-arrow-left" id="prevProject" aria-label="Previous project">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="projects-container">
+            <div class="projects-slide active" data-slide="0">
+              <div class="project-card reveal">
+                <h3>PokemonAPI</h3>
+                <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2025</span>
+                <p>Collect and present Pokémon data with images, sounds, and advanced filtering.</p>
+                <a href="https://github.com/maxhalfin18/pokemonAPI" target="_blank">
+                  <img src="assets/poke2.png" alt="PokemonAPI Project" />
+                </a>
+                <div style="display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem;">
+                  <a href="https://github.com/maxhalfin18/pokemonAPI" target="_blank" class="btn hero-btn" style="padding: 0.5rem 1.2rem; font-size: 1rem;">GitHub</a>
+                  <a href="https://colab.research.google.com/drive/11piEEIaGOqQmcQ_t_JRdTtRg7aJajfoF?usp=sharing" target="_blank" class="btn hero-btn secondary" style="padding: 0.5rem 1.2rem; font-size: 1rem;">Live Demo</a>
+                </div>
+              </div>
+              <div class="project-card reveal">
+                <h3>portfolioSite</h3>
+                <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2025</span>
+                <p>Personal portfolio website to showcase projects and contact me directly.</p>
+                <a href="https://github.com/maxhalfin18/portfolioSite" target="_blank">
+                  <img src="assets/s1.png" alt="portfolioSite Project" />
+                </a>
+                <div style="display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem;">
+                  <a href="https://github.com/maxhalfin18/portfoliosite" target="_blank" class="btn hero-btn" style="padding: 0.5rem 1.2rem; font-size: 1rem;">GitHub</a>
+                  <a href="https://maxhalfinportfolio.com/" target="_blank" class="btn hero-btn secondary" style="padding: 0.5rem 1.2rem; font-size: 1rem;">Live Demo</a>
+                </div>
+              </div>
+            </div>
+            <div class="projects-slide" data-slide="1">
+              <div class="project-card reveal">
+                <h3>CollegeManager</h3>
+                <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2025</span>
+                <p id="project3-desc">College Manager is a Java project simulating a college system, showcasing Object-Oriented Programming (OOP) with features for managing students, courses, instructors, and enrollments.</p>
+                <a href="https://github.com/maxhalfin18/CollegeManager" target="_blank">
+                  <img src="assets/cm.png" alt="CollegeManager Project" />
+                </a>
+                <div style="display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem;">
+                  <a href="https://github.com/maxhalfin18/CollegeManager" target="_blank" class="btn hero-btn" style="padding: 0.5rem 1.2rem; font-size: 1rem;">GitHub</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project-card reveal">
-            <h3>portfolioSite</h3>
-            <span style="color: #6ec1e4; font-weight: 500; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2025</span>
-            <p>Personal portfolio website to showcase projects and contact me directly.</p>
-            <a href="https://github.com/maxhalfin18/portfolioSite" target="_blank">
-              <img src="assets/s1.png" alt="portfolioSite Project" />
-            </a>
-            <div style="display: flex; gap: 0.7rem; align-items: center; margin-top: 0.7rem;">
-              <a href="https://github.com/maxhalfin18/portfoliosite" target="_blank" class="btn hero-btn" style="padding: 0.5rem 1.2rem; font-size: 1rem;">GitHub</a>
-              <a href="https://maxhalfinportfolio.com/" target="_blank" class="btn hero-btn secondary" style="padding: 0.5rem 1.2rem; font-size: 1rem;">Live Demo</a>
-            </div>
-          </div>
+          <button class="nav-arrow nav-arrow-right" id="nextProject" aria-label="Next project">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="projects-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
         </div>
       </div>
     </section>
@@ -211,7 +242,6 @@
     <span class="close-modal" id="closeExcelModal">&times;</span>
     <img class="modal-content" id="modalExcelImg" src="assets/excel.png" alt="Advanced Excel Certification" />
   </div>
-
   <script src="script.js"></script>
   <script src="hamburger.js"></script>
   <script src="nagishli.js" defer></script>

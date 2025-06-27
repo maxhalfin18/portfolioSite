@@ -115,7 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "Feel free to reach out!",
       form: ["Full Name", "Your name", "Email", "Your email", "Message", "Type your message...", "Send"],
       footer: "All rights reserved.",
-      name: "Max Halfin"
+      name: "Max Halfin",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager is a Java project simulating a college system, showcasing Object-Oriented Programming (OOP) with features for managing students, courses, instructors, and enrollments.",
+        "GitHub"
+      ]
     },
     he: {
       nav: ["דף הבית", "עליי", "השכלה", "הפרויקטים שלי", "הסמכות", "צור קשר"],
@@ -136,7 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "מוזמן לפנות אליי!",
       form: ["שם מלא", "הזן שם", "אימייל", "הזן אימייל", "הודעה", "כתוב את הודעתך...", "שלח"],
       footer: "כל הזכויות שמורות.",
-      name: "מקס חלפין"
+      name: "מקס חלפין",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "קולג' מנג'ר הוא פרויקט ב-Java המדמה מערכת מכללה, המדגים תכנות מונחה עצמים (OOP) עם יכולות לניהול סטודנטים, קורסים, מרצים והרשמות.",
+        "גיטהאב"
+      ]
     },
     ar: {
       nav: ["الصفحة الرئيسية", "عنّي", "تعليمي", "مشاريعي", "شهاداتي", "اتصل بي"],
@@ -157,7 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "لا تتردد في التواصل!",
       form: ["الاسم الكامل", "أدخل اسمك", "البريد الإلكتروني", "أدخل بريدك الإلكتروني", "الرسالة", "اكتب رسالتك...", "إرسال"],
       footer: "جميع الحقوق محفوظة.",
-      name: "ماكس حلڤين"
+      name: "ماكس حلڤين",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "كلية مانجر هو مشروع جافا يحاكي نظام كلية، ويعرض البرمجة الكائنية (OOP) مع ميزات لإدارة الطلاب، الدورات، المحاضرين والتسجيلات.",
+        "جيت هاب"
+      ]
     },
     ru: {
       nav: ["Главная", "Обо мне", "Образование", "Мои проекты", "Сертификаты", "Связаться"],
@@ -178,7 +196,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "Не стесняйтесь обращаться!",
       form: ["ФИО", "Ваше имя", "Email", "Ваш email", "Сообщение", "Введите сообщение...", "Отправить"],
       footer: "Все права защищены.",
-      name: "Макс Халфин"
+      name: "Макс Халфин",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager — это проект на Java, моделирующий систему колледжа и демонстрирующий объектно-ориентированное программирование (OOP) с возможностями управления студентами, курсами, преподавателями и регистрациями.",
+        "GitHub"
+      ]
     },
     am: {
       nav: ["መነሻ", "ስለ እኔ", "ትምህርት ቤት", "ፕሮጀክቶቼ", "ማረጋገጫዎች", "ያግኙኝ"],
@@ -199,7 +223,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "እባክዎን ያግኙኝ!",
       form: ["ሙሉ ስም", "ስምዎን ያስገቡ", "ኢሜይል", "ኢሜይልዎን ያስገቡ", "መልእክት", "መልእክትዎን ያስገቡ...", "ላክ"],
       footer: "ሁሉም መብቶች የተጠበቁ ናቸው።",
-      name: "ማክስ ሃልፊን"
+      name: "ማክስ ሃልፊን",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager የጃቫ ፕሮጀክት ሲሆን የኮሌጅ ስርዓትን ይወክላል፣ የአባል አወዳድር (OOP) በተግባር ማሳየት እና የተማሪዎች፣ ኮርሶች፣ አስተማሪዎች እና ምዝገባዎችን ማስተናገድ ይችላል።",
+        "GitHub"
+      ]
     },
     fr: {
       nav: ["Accueil", "À propos", "Éducation", "Mes Projets", "Certifications", "Contact"],
@@ -220,7 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "N'hésitez pas à me contacter !",
       form: ["Nom complet", "Votre nom", "Email", "Votre email", "Message", "Tapez votre message...", "Envoyer"],
       footer: "Tous droits réservés.",
-      name: "Max Halfin"
+      name: "Max Halfin",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager est un projet Java simulant un système universitaire, mettant en avant la programmation orientée objet (POO) avec des fonctionnalités de gestion des étudiants, des cours, des enseignants et des inscriptions.",
+        "GitHub"
+      ]
     },
     es: {
       nav: ["Inicio", "Sobre mí", "Educación", "Mis Proyectos", "Certificaciones", "Contacto"],
@@ -241,7 +277,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "¡No dudes en contactarme!",
       form: ["Nombre completo", "Tu nombre", "Correo electrónico", "Tu correo", "Mensaje", "Escribe tu mensaje...", "Enviar"],
       footer: "Todos los derechos reservados.",
-      name: "Max Halfin"
+      name: "Max Halfin",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager es un proyecto en Java que simula un sistema universitario, mostrando Programación Orientada a Objetos (OOP) con funciones para gestionar estudiantes, cursos, instructores e inscripciones.",
+        "GitHub"
+      ]
     },
     de: {
       nav: ["Startseite", "Über mich", "Ausbildung", "Meine Projekte", "Zertifikate", "Kontakt"],
@@ -262,7 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "Kontaktieren Sie mich gerne!",
       form: ["Vollständiger Name", "Ihr Name", "E-Mail", "Ihre E-Mail", "Nachricht", "Ihre Nachricht...", "Senden"],
       footer: "Alle Rechte vorbehalten.",
-      name: "Max Halfin"
+      name: "Max Halfin",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager ist ein Java-Projekt, das ein Hochschulsystem simuliert und objektorientierte Programmierung (OOP) mit Funktionen zur Verwaltung von Studierenden, Kursen, Dozenten und Einschreibungen demonstriert.",
+        "GitHub"
+      ]
     },
     it: {
       nav: ["Home", "Chi sono", "Formazione", "I miei progetti", "Certificazioni", "Contatti"],
@@ -283,7 +331,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "Sentiti libero di contattarmi!",
       form: ["Nome completo", "Il tuo nome", "Email", "La tua email", "Messaggio", "Scrivi il tuo messaggio...", "Invia"],
       footer: "Tutti i diritti riservati.",
-      name: "Max Halfin"
+      name: "Max Halfin",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager è un progetto Java che simula un sistema universitario, mostrando la programmazione orientata agli oggetti (OOP) con funzionalità per la gestione di studenti, corsi, docenti e iscrizioni.",
+        "GitHub"
+      ]
     },
     zh: {
       nav: ["首页", "关于我", "教育", "我的项目", "证书", "联系我"],
@@ -304,7 +358,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "欢迎随时联系！",
       form: ["全名", "您的名字", "邮箱", "您的邮箱", "留言", "请输入您的留言...", "发送"],
       footer: "版权所有。",
-      name: "马克斯·哈芬"
+      name: "马克斯·哈芬",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager 是一个用 Java 编写的项目，模拟大学系统，展示了面向对象编程（OOP），并具备管理学生、课程、教师和注册的功能。",
+        "GitHub"
+      ]
     },
     ja: {
       nav: ["ホーム", "私について", "学歴", "プロジェクト", "認定資格", "お問い合わせ"],
@@ -325,7 +385,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "お気軽にご連絡ください！",
       form: ["氏名", "お名前", "メールアドレス", "メールアドレスを入力", "メッセージ", "メッセージを入力...", "送信"],
       footer: "全著作権所有。",
-      name: "マックス・ハルフィン"
+      name: "マックス・ハルフィン",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Managerは、大学システムをシミュレートするJavaプロジェクトで、学生、コース、講師、登録の管理機能を備えたオブジェクト指向プログラミング（OOP）を実演します。",
+        "GitHub"
+      ]
     },
     ro: {
       nav: ["Acasă", "Despre mine", "Educație", "Proiectele mele", "Certificări", "Contact"],
@@ -346,7 +412,13 @@ document.addEventListener('DOMContentLoaded', () => {
       contactSubtitle: "Nu ezitați să mă contactați!",
       form: ["Nume complet", "Numele tău", "Email", "Emailul tău", "Mesaj", "Scrie mesajul tău...", "Trimite"],
       footer: "Toate drepturile rezervate.",
-      name: "Max Halfin"
+      name: "Max Halfin",
+      project3: [
+        "CollegeManager",
+        "2025",
+        "College Manager este un proiect Java care simulează un sistem universitar, demonstrând programarea orientată pe obiecte (OOP) cu funcționalități pentru gestionarea studenților, cursurilor, instructorilor și înscrierilor.",
+        "GitHub"
+      ]
     }
   };
 
@@ -404,31 +476,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Projects
     const projectsH2 = document.querySelector('#projects h2');
     if (projectsH2) projectsH2.innerHTML = translations[lang].projectsTitle;
-    const projCards = document.querySelectorAll('#projects .project-card');
-    if (projCards.length >= 2) {
-      // Card 1
-      const p1h3 = projCards[0].querySelector('h3');
+    
+    // Update all project cards in all slides
+    const allProjCards = document.querySelectorAll('#projects .project-card');
+    if (allProjCards.length >= 3) {
+      // Card 1 (PokemonAPI) - in slide 0
+      const p1h3 = allProjCards[0].querySelector('h3');
       if (p1h3) p1h3.innerHTML = translations[lang].project1[0];
-      const p1span = projCards[0].querySelector('span');
+      const p1span = allProjCards[0].querySelector('span');
       if (p1span) p1span.innerHTML = translations[lang].project1[1];
-      const p1p = projCards[0].querySelectorAll('p')[0];
+      const p1p = allProjCards[0].querySelectorAll('p')[0];
       if (p1p) p1p.innerHTML = translations[lang].project1[2];
-      const btns1 = projCards[0].querySelectorAll('.btn');
+      const btns1 = allProjCards[0].querySelectorAll('.btn');
       if (btns1.length >= 2) {
         if (translations[lang].project1[3]) btns1[0].innerHTML = translations[lang].project1[3];
         if (translations[lang].project1[4]) btns1[1].innerHTML = translations[lang].project1[4];
       }
-      // Card 2
-      const p2h3 = projCards[1].querySelector('h3');
+      
+      // Card 2 (portfolioSite) - in slide 0
+      const p2h3 = allProjCards[1].querySelector('h3');
       if (p2h3) p2h3.innerHTML = translations[lang].project2[0];
-      const p2span = projCards[1].querySelector('span');
+      const p2span = allProjCards[1].querySelector('span');
       if (p2span) p2span.innerHTML = translations[lang].project2[1];
-      const p2p = projCards[1].querySelectorAll('p')[0];
+      const p2p = allProjCards[1].querySelectorAll('p')[0];
       if (p2p) p2p.innerHTML = translations[lang].project2[2];
-      const btns2 = projCards[1].querySelectorAll('.btn');
+      const btns2 = allProjCards[1].querySelectorAll('.btn');
       if (btns2.length >= 2) {
         if (translations[lang].project2[3]) btns2[0].innerHTML = translations[lang].project2[3];
         if (translations[lang].project2[4]) btns2[1].innerHTML = translations[lang].project2[4];
+      }
+      
+      // Card 3 (CollegeManager) - in slide 1
+      const p3h3 = allProjCards[2].querySelector('h3');
+      if (p3h3) p3h3.innerHTML = translations[lang].project3[0];
+      const p3span = allProjCards[2].querySelector('span');
+      if (p3span) p3span.innerHTML = translations[lang].project3[1];
+      const p3p = allProjCards[2].querySelectorAll('p')[0];
+      if (p3p) p3p.innerHTML = translations[lang].project3[2];
+      const btns3 = allProjCards[2].querySelectorAll('.btn');
+      if (btns3.length >= 1) {
+        if (translations[lang].project3[3]) btns3[0].innerHTML = translations[lang].project3[3];
       }
     }
     // Certifications
@@ -517,6 +604,29 @@ document.addEventListener('DOMContentLoaded', () => {
         langIcon.alt = 'English';
       }
     }
+    // Update project descriptions
+    const project1Desc = document.querySelector('.project-card p');
+    if (project1Desc && !project1Desc.id) {
+      project1Desc.textContent = translations[lang].project1[2];
+    }
+    
+    const project2Desc = document.querySelectorAll('.project-card p')[1];
+    if (project2Desc && !project2Desc.id) {
+      project2Desc.textContent = translations[lang].project2[2];
+    }
+    
+    const project3Desc = document.getElementById('project3-desc');
+    if (project3Desc) {
+      project3Desc.textContent = translations[lang].project3[2];
+    }
+    
+    // Update navigation logic for RTL languages
+    updateNavigationLogic();
+    
+    // Also update button states immediately
+    setTimeout(() => {
+      updateButtonStates();
+    }, 100);
   }
 
   // Language switcher UI logic
@@ -671,4 +781,486 @@ document.addEventListener('DOMContentLoaded', () => {
       setLanguageWithRetry(savedLang);
     }, 100);
   }
+
+  // Projects Navigation System
+  let currentSlide = 0;
+  const totalSlides = 2; // 2 slides: slide 0 (2 projects) and slide 1 (1 project)
+  let navigationInitialized = false; // Flag to prevent multiple initializations
+  let globalClickHandler = null; // Store reference to global click handler
+
+  function showSlide(slideIndex) {
+    console.log('Showing slide:', slideIndex);
+    // Hide all slides
+    const slides = document.querySelectorAll('.projects-slide');
+    console.log('Found slides:', slides.length);
+    slides.forEach(slide => slide.classList.remove('active'));
+    
+    // Show current slide
+    if (slides[slideIndex]) {
+      slides[slideIndex].classList.add('active');
+    }
+    
+    // Update dots
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === slideIndex);
+    });
+    
+    // Update arrow states based on language direction
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    
+    if (prevBtn && nextBtn) {
+      if (currentDir === 'rtl') {
+        // In RTL: left arrow goes to next, right arrow goes to previous
+        prevBtn.disabled = slideIndex === totalSlides - 1; // Left arrow disabled when on last slide
+        nextBtn.disabled = slideIndex === 0; // Right arrow disabled when on first slide
+      } else {
+        // In LTR: left arrow goes to previous, right arrow goes to next
+        prevBtn.disabled = slideIndex === 0; // Left arrow disabled when on first slide
+        nextBtn.disabled = slideIndex === totalSlides - 1; // Right arrow disabled when on last slide
+      }
+      
+      console.log('Button states updated - RTL:', currentDir === 'rtl', 'Slide:', slideIndex);
+      console.log('Left arrow disabled:', prevBtn.disabled);
+      console.log('Right arrow disabled:', nextBtn.disabled);
+    }
+    
+    currentSlide = slideIndex;
+  }
+
+  function nextSlide() {
+    console.log('Next slide clicked, current:', currentSlide);
+    if (currentSlide < totalSlides - 1) {
+      showSlide(currentSlide + 1);
+    }
+  }
+
+  function prevSlide() {
+    console.log('Prev slide clicked, current:', currentSlide);
+    if (currentSlide > 0) {
+      showSlide(currentSlide - 1);
+    }
+  }
+
+  // RTL-aware navigation functions
+  function handleLeftArrow() {
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    if (currentDir === 'rtl') {
+      // In RTL languages, left arrow goes to next slide
+      nextSlide();
+    } else {
+      // In LTR languages, left arrow goes to previous slide
+      prevSlide();
+    }
+  }
+
+  function handleRightArrow() {
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    if (currentDir === 'rtl') {
+      // In RTL languages, right arrow goes to previous slide
+      prevSlide();
+    } else {
+      // In LTR languages, right arrow goes to next slide
+      nextSlide();
+    }
+  }
+
+  // Initialize navigation when DOM is ready
+  function initializeProjectNavigation() {
+    console.log('Initializing project navigation...');
+    
+    // Remove existing global click handler if it exists
+    if (globalClickHandler) {
+      document.removeEventListener('click', globalClickHandler);
+      globalClickHandler = null;
+    }
+    
+    setTimeout(() => {
+      const prevBtn = document.getElementById('prevProject');
+      const nextBtn = document.getElementById('nextProject');
+      const dots = document.querySelectorAll('.dot');
+      
+      console.log('Found prevBtn:', !!prevBtn);
+      console.log('Found nextBtn:', !!nextBtn);
+      console.log('Current direction:', document.body.getAttribute('dir'));
+      
+      // Create a single, reliable global click handler
+      globalClickHandler = function(e) {
+        // Handle left arrow
+        if (e.target && e.target.id === 'prevProject') {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Left arrow clicked via delegation');
+          
+          const dir = document.body.getAttribute('dir') || 'ltr';
+          console.log('Direction:', dir);
+          
+          if (dir === 'rtl') {
+            console.log('RTL: Left arrow = Next slide');
+            if (currentSlide < totalSlides - 1) {
+              showSlide(currentSlide + 1);
+            }
+          } else {
+            console.log('LTR: Left arrow = Previous slide');
+            if (currentSlide > 0) {
+              showSlide(currentSlide - 1);
+            }
+          }
+          return;
+        }
+        
+        // Handle right arrow
+        if (e.target && e.target.id === 'nextProject') {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Right arrow clicked via delegation');
+          
+          const dir = document.body.getAttribute('dir') || 'ltr';
+          console.log('Direction:', dir);
+          
+          if (dir === 'rtl') {
+            console.log('RTL: Right arrow = Previous slide');
+            if (currentSlide > 0) {
+              showSlide(currentSlide - 1);
+            }
+          } else {
+            console.log('LTR: Right arrow = Next slide');
+            if (currentSlide < totalSlides - 1) {
+              showSlide(currentSlide + 1);
+            }
+          }
+          return;
+        }
+        
+        // Handle dots
+        if (e.target && e.target.classList.contains('dot')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const slideIndex = parseInt(e.target.getAttribute('data-slide') || '0');
+          console.log('Dot clicked via delegation:', slideIndex);
+          showSlide(slideIndex);
+          return;
+        }
+      };
+      
+      // Add the global click handler
+      document.addEventListener('click', globalClickHandler, true); // Use capture phase for better reliability
+      
+      // Also add direct event listeners as backup
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Left arrow clicked directly');
+          
+          const dir = document.body.getAttribute('dir') || 'ltr';
+          if (dir === 'rtl') {
+            if (currentSlide < totalSlides - 1) {
+              showSlide(currentSlide + 1);
+            }
+          } else {
+            if (currentSlide > 0) {
+              showSlide(currentSlide - 1);
+            }
+          }
+        });
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Right arrow clicked directly');
+          
+          const dir = document.body.getAttribute('dir') || 'ltr';
+          if (dir === 'rtl') {
+            if (currentSlide > 0) {
+              showSlide(currentSlide - 1);
+            }
+          } else {
+            if (currentSlide < totalSlides - 1) {
+              showSlide(currentSlide + 1);
+            }
+          }
+        });
+      }
+      
+      // Initialize first slide only if no slide is currently active
+      const activeSlide = document.querySelector('.projects-slide.active');
+      if (!activeSlide) {
+        showSlide(0);
+      } else {
+        // Update button states for current slide
+        updateButtonStates();
+      }
+      navigationInitialized = true;
+      console.log('Navigation initialization complete with dual event handling');
+    }, 500);
+  }
+
+  // Manual initialization function
+  window.initializeProjectNavigation = initializeProjectNavigation;
+
+  // Test function to check navigation elements
+  window.testNavigation = function() {
+    console.log('Testing navigation elements...');
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    const dots = document.querySelectorAll('.dot');
+    const slides = document.querySelectorAll('.projects-slide');
+    
+    console.log('prevBtn exists:', !!prevBtn);
+    console.log('nextBtn exists:', !!nextBtn);
+    console.log('dots count:', dots.length);
+    console.log('slides count:', slides.length);
+    
+    if (prevBtn) {
+      console.log('prevBtn styles:', window.getComputedStyle(prevBtn));
+      console.log('prevBtn position:', prevBtn.getBoundingClientRect());
+      // Force make it visible
+      prevBtn.style.display = 'flex';
+      prevBtn.style.background = 'red';
+      prevBtn.style.zIndex = '9999';
+    }
+    
+    if (nextBtn) {
+      console.log('nextBtn styles:', window.getComputedStyle(nextBtn));
+      console.log('nextBtn position:', nextBtn.getBoundingClientRect());
+      // Force make it visible
+      nextBtn.style.display = 'flex';
+      nextBtn.style.background = 'blue';
+      nextBtn.style.zIndex = '9999';
+    }
+    
+    // Try to click next button
+    if (nextBtn) {
+      console.log('Attempting to click next button...');
+      nextBtn.click();
+    }
+  };
+
+  // Initialize navigation
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(initializeProjectNavigation, 500);
+    });
+  } else {
+    // DOM is already loaded
+    setTimeout(initializeProjectNavigation, 500);
+  }
+
+  // Manual slide switching function
+  window.manualNextSlide = function() {
+    console.log('Manually triggering next slide...');
+    nextSlide();
+  };
+
+  window.manualPrevSlide = function() {
+    console.log('Manually triggering prev slide...');
+    prevSlide();
+  };
+
+  // Initialize navigation
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(initializeProjectNavigation, 500);
+    });
+  } else {
+    // DOM is already loaded
+    setTimeout(initializeProjectNavigation, 500);
+  }
+
+  // Update button states based on current language and slide
+  function updateButtonStates() {
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    
+    if (prevBtn && nextBtn) {
+      if (currentDir === 'rtl') {
+        // In RTL: left arrow goes to next, right arrow goes to previous
+        prevBtn.disabled = currentSlide === totalSlides - 1; // Left arrow disabled when on last slide
+        nextBtn.disabled = currentSlide === 0; // Right arrow disabled when on first slide
+      } else {
+        // In LTR: left arrow goes to previous, right arrow goes to next
+        prevBtn.disabled = currentSlide === 0; // Left arrow disabled when on first slide
+        nextBtn.disabled = currentSlide === totalSlides - 1; // Right arrow disabled when on last slide
+      }
+      
+      console.log('Button states updated for language change - RTL:', currentDir === 'rtl', 'Slide:', currentSlide);
+      console.log('Left arrow disabled:', prevBtn.disabled);
+      console.log('Right arrow disabled:', nextBtn.disabled);
+    }
+  }
+
+  // Update navigation logic when language changes
+  function updateNavigationLogic() {
+    console.log('Updating navigation logic for language change...');
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    console.log('Current direction:', currentDir);
+    console.log('Current slide before language change:', currentSlide);
+    
+    // Store current slide to preserve it
+    const preservedSlide = currentSlide;
+    
+    // Reset the flag to allow reinitialization
+    navigationInitialized = false;
+    
+    // Update button states immediately
+    updateButtonStates();
+    
+    // Re-initialize navigation completely but preserve current slide
+    setTimeout(() => {
+      // Temporarily set currentSlide to preserved value
+      currentSlide = preservedSlide;
+      initializeProjectNavigation();
+      
+      // After initialization, show the preserved slide
+      setTimeout(() => {
+        showSlide(preservedSlide);
+        console.log('Restored to slide:', preservedSlide);
+      }, 100);
+    }, 200);
+  }
+
+  // Test RTL navigation
+  window.testRTLNavigation = function() {
+    console.log('=== RTL Navigation Test ===');
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    console.log('Current direction:', currentDir);
+    console.log('Current slide:', currentSlide);
+    console.log('Total slides:', totalSlides);
+    
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    
+    console.log('Prev button exists:', !!prevBtn);
+    console.log('Next button exists:', !!nextBtn);
+    
+    if (prevBtn) {
+      console.log('Prev button disabled:', prevBtn.disabled);
+      console.log('Prev button styles:', window.getComputedStyle(prevBtn));
+    }
+    
+    if (nextBtn) {
+      console.log('Next button disabled:', nextBtn.disabled);
+      console.log('Next button styles:', window.getComputedStyle(nextBtn));
+    }
+    
+    // Test clicking prev button
+    if (prevBtn) {
+      console.log('Testing prev button click...');
+      prevBtn.click();
+    }
+    
+    // Test clicking next button after a delay
+    setTimeout(() => {
+      if (nextBtn) {
+        console.log('Testing next button click...');
+        nextBtn.click();
+      }
+    }, 1000);
+  };
+
+  // Force navigation function
+  window.forceNavigation = function(direction) {
+    console.log('Force navigation:', direction);
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    console.log('Current direction:', currentDir);
+    console.log('Current slide:', currentSlide);
+    
+    if (direction === 'left') {
+      if (currentDir === 'rtl') {
+        console.log('RTL: Left arrow = Next slide');
+        if (currentSlide < totalSlides - 1) {
+          showSlide(currentSlide + 1);
+        }
+      } else {
+        console.log('LTR: Left arrow = Previous slide');
+        if (currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+      }
+    } else if (direction === 'right') {
+      if (currentDir === 'rtl') {
+        console.log('RTL: Right arrow = Previous slide');
+        if (currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+      } else {
+        console.log('LTR: Right arrow = Next slide');
+        if (currentSlide < totalSlides - 1) {
+          showSlide(currentSlide + 1);
+        }
+      }
+    }
+  };
+
+  // Reset navigation flag
+  window.resetNavigationFlag = function() {
+    navigationInitialized = false;
+    console.log('Navigation flag reset');
+  };
+
+  // Check button states
+  window.checkButtonStates = function() {
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    const currentDir = document.body.getAttribute('dir') || 'ltr';
+    
+    console.log('=== Button States Check ===');
+    console.log('Current direction:', currentDir);
+    console.log('Current slide:', currentSlide);
+    console.log('Total slides:', totalSlides);
+    
+    if (prevBtn) {
+      console.log('Left arrow (prevBtn):');
+      console.log('  - Exists:', !!prevBtn);
+      console.log('  - Disabled:', prevBtn.disabled);
+      console.log('  - Visible:', window.getComputedStyle(prevBtn).display !== 'none');
+      console.log('  - Opacity:', window.getComputedStyle(prevBtn).opacity);
+    }
+    
+    if (nextBtn) {
+      console.log('Right arrow (nextBtn):');
+      console.log('  - Exists:', !!nextBtn);
+      console.log('  - Disabled:', nextBtn.disabled);
+      console.log('  - Visible:', window.getComputedStyle(nextBtn).display !== 'none');
+      console.log('  - Opacity:', window.getComputedStyle(nextBtn).opacity);
+    }
+    
+    // Expected states
+    if (currentDir === 'rtl') {
+      console.log('Expected RTL states:');
+      console.log('  - Left arrow should be disabled when slide =', totalSlides - 1);
+      console.log('  - Right arrow should be disabled when slide = 0');
+    } else {
+      console.log('Expected LTR states:');
+      console.log('  - Left arrow should be disabled when slide = 0');
+      console.log('  - Right arrow should be disabled when slide =', totalSlides - 1);
+    }
+  };
+
+  // Check current slide state
+  window.checkCurrentSlide = function() {
+    const activeSlide = document.querySelector('.projects-slide.active');
+    const activeDot = document.querySelector('.dot.active');
+    
+    console.log('=== Current Slide State ===');
+    console.log('Current slide variable:', currentSlide);
+    console.log('Active slide element:', activeSlide ? activeSlide.className : 'None');
+    console.log('Active dot element:', activeDot ? activeDot.getAttribute('data-slide') : 'None');
+    
+    const slides = document.querySelectorAll('.projects-slide');
+    slides.forEach((slide, index) => {
+      console.log(`Slide ${index}:`, slide.classList.contains('active') ? 'ACTIVE' : 'inactive');
+    });
+    
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      console.log(`Dot ${index}:`, dot.classList.contains('active') ? 'ACTIVE' : 'inactive');
+    });
+  };
 }); 

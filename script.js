@@ -477,60 +477,130 @@ document.addEventListener('DOMContentLoaded', () => {
   // Language switcher UI logic
   const langBtn = document.getElementById('langSwitcherBtn');
   const langDropdown = document.getElementById('langDropdown');
+  
+  console.log('Language elements found:', { langBtn: !!langBtn, langDropdown: !!langDropdown });
+  
   if (langBtn && langDropdown) {
     langBtn.addEventListener('click', e => {
       e.stopPropagation();
-      // Set dropdown direction to match current body direction
-      langDropdown.setAttribute('dir', document.body.getAttribute('dir') || 'ltr');
-      // Fixed language order - positions will always be the same
-      const langs = [
-        { code: 'en', img: 'assets/us.png', alt: 'English' },
-        { code: 'he', img: 'assets/isr.png', alt: 'עברית' },
-        { code: 'ar', img: 'assets/arab.png', alt: 'العربية' },
-        { code: 'ru', img: 'assets/rus.png', alt: 'Русский' },
-        { code: 'am', img: 'assets/eth.png', alt: 'አማርኛ' },
-        { code: 'fr', img: 'assets/fra.png', alt: 'Français' },
-        { code: 'es', img: 'assets/spa.png', alt: 'Español' },
-        { code: 'de', img: 'assets/ger.png', alt: 'Deutsch' },
-        { code: 'it', img: 'assets/ita.png', alt: 'Italiano' },
-        { code: 'zh', img: 'assets/chi.png', alt: '中文' },
-        { code: 'ja', img: 'assets/jap.png', alt: '日本語' },
-        { code: 'ro', img: 'assets/rom.png', alt: 'Română' }
-      ];
+      console.log('Language button clicked');
       
-      // Create 2 rows with 6 languages each - fixed positions
-      const row1 = langs.slice(0, 6);
-      const row2 = langs.slice(6, 12);
-      
-      // Create HTML for the grid layout - positions are always the same
-      const gridHTML = [
-        `<div class="lang-row" style="display: flex; gap: 0.3rem; justify-content: center; margin-bottom: 0.3rem;">
-          ${row1.map(l => `<button class="lang-option" data-lang="${l.code}"><img src="${l.img}" alt="${l.alt}" /></button>`).join('')}
-        </div>`,
-        `<div class="lang-row" style="display: flex; gap: 0.3rem; justify-content: center;">
-          ${row2.map(l => `<button class="lang-option" data-lang="${l.code}"><img src="${l.img}" alt="${l.alt}" /></button>`).join('')}
-        </div>`
-      ].join('');
-      
-      langDropdown.innerHTML = gridHTML;
-      
-      // Re-attach click listeners
-      langDropdown.querySelectorAll('.lang-option').forEach(btn => {
-        btn.addEventListener('click', e => {
-          const lang = btn.getAttribute('data-lang');
-          setLanguage(lang);
-          localStorage.setItem('lang', lang);
-          langDropdown.style.display = 'none';
-        });
-      });
-      langDropdown.style.display = langDropdown.style.display === 'block' ? 'none' : 'block';
+      // Simple toggle logic
+      if (langDropdown.style.display === 'flex') {
+        langDropdown.style.display = 'none';
+        console.log('Dropdown hidden');
+      } else {
+        // Show dropdown
+        langDropdown.style.display = 'flex';
+        console.log('Dropdown shown');
+        
+        // Generate content only if not already generated
+        if (!langDropdown.querySelector('.lang-option')) {
+          // Fixed language order - positions will always be the same
+          const langs = [
+            { code: 'en', img: 'assets/us.png', alt: 'English' },
+            { code: 'he', img: 'assets/isr.png', alt: 'עברית' },
+            { code: 'ar', img: 'assets/arab.png', alt: 'العربية' },
+            { code: 'ru', img: 'assets/rus.png', alt: 'Русский' },
+            { code: 'am', img: 'assets/eth.png', alt: 'አማርኛ' },
+            { code: 'fr', img: 'assets/fra.png', alt: 'Français' },
+            { code: 'es', img: 'assets/spa.png', alt: 'Español' },
+            { code: 'de', img: 'assets/ger.png', alt: 'Deutsch' },
+            { code: 'it', img: 'assets/ita.png', alt: 'Italiano' },
+            { code: 'zh', img: 'assets/chi.png', alt: '中文' },
+            { code: 'ja', img: 'assets/jap.png', alt: '日本語' },
+            { code: 'ro', img: 'assets/rom.png', alt: 'Română' }
+          ];
+          
+          // Create 2 rows with 6 languages each - fixed positions
+          const row1 = langs.slice(0, 6);
+          const row2 = langs.slice(6, 12);
+          
+          // Create HTML for the grid layout - positions are always the same
+          const gridHTML = [
+            `<div class="lang-row" style="display: flex; gap: 0.3rem; justify-content: center; margin-bottom: 0.3rem;">
+              ${row1.map(l => `<button class="lang-option" data-lang="${l.code}"><img src="${l.img}" alt="${l.alt}" /></button>`).join('')}
+            </div>`,
+            `<div class="lang-row" style="display: flex; gap: 0.3rem; justify-content: center;">
+              ${row2.map(l => `<button class="lang-option" data-lang="${l.code}"><img src="${l.img}" alt="${l.alt}" /></button>`).join('')}
+            </div>`
+          ].join('');
+          
+          langDropdown.innerHTML = gridHTML;
+          console.log('Generated dropdown HTML');
+          
+          // Re-attach click listeners
+          langDropdown.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', e => {
+              const lang = btn.getAttribute('data-lang');
+              console.log('Language selected:', lang);
+              setLanguage(lang);
+              localStorage.setItem('lang', lang);
+              langDropdown.style.display = 'none';
+            });
+          });
+        }
+        
+        // Position dropdown based on current language direction
+        const currentDir = document.body.getAttribute('dir') || 'ltr';
+        const buttonRect = langBtn.getBoundingClientRect();
+        const dropdownWidth = 260; // Approximate dropdown width
+        const screenWidth = window.innerWidth;
+        const isMobile = screenWidth <= 600;
+        
+        if (currentDir === 'rtl') {
+          // For RTL languages, position dropdown from right to left
+          if (isMobile) {
+            // On mobile, always position from right edge
+            langDropdown.style.left = 'auto';
+            langDropdown.style.right = '0';
+            langDropdown.style.maxWidth = 'calc(100vw - 20px)';
+          } else {
+            // On desktop, check if dropdown would go outside right edge
+            const rightEdge = buttonRect.right;
+            if (rightEdge + dropdownWidth > screenWidth) {
+              // Position it to the left of the button
+              langDropdown.style.left = 'auto';
+              langDropdown.style.right = '0';
+            } else {
+              // Position it to the right of the button
+              langDropdown.style.left = 'auto';
+              langDropdown.style.right = '0';
+            }
+          }
+        } else {
+          // For LTR languages, position dropdown from left to right
+          if (isMobile) {
+            // On mobile, always position from left edge
+            langDropdown.style.left = '0';
+            langDropdown.style.right = 'auto';
+            langDropdown.style.maxWidth = 'calc(100vw - 20px)';
+          } else {
+            // On desktop, check if dropdown would go outside left edge
+            const leftEdge = buttonRect.left;
+            if (leftEdge + dropdownWidth > screenWidth) {
+              // Position it to the right of the button
+              langDropdown.style.left = 'auto';
+              langDropdown.style.right = '0';
+            } else {
+              // Position it to the left of the button (default)
+              langDropdown.style.left = '0';
+              langDropdown.style.right = 'auto';
+            }
+          }
+        }
+      }
     });
+    
     document.addEventListener('click', () => {
       langDropdown.style.display = 'none';
     });
+    
     langDropdown.addEventListener('click', e => {
       e.stopPropagation();
     });
+  } else {
+    console.error('Language switcher elements not found!');
   }
 
   // On page load, set language from localStorage if exists

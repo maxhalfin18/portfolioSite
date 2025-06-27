@@ -42,6 +42,7 @@ body {
   display: flex;
   justify-content: center;
   transition: background 0.4s, color 0.4s;
+  overflow: visible;
 }
 .header-flex {
   display: flex;
@@ -49,6 +50,8 @@ body {
   justify-content: center;
   height: 80px;
   width: 100%;
+  position: relative;
+  overflow: visible;
 }
 .logo {
   font-size: 2.3rem;
@@ -1278,6 +1281,7 @@ body.dark-mode #darkModeToggle {
   display: flex;
   align-items: center;
   margin-right: 18px;
+  z-index: 99999;
 }
 .lang-switcher-btn {
   background: none;
@@ -1292,13 +1296,14 @@ body.dark-mode #darkModeToggle {
 .lang-dropdown {
   display: none;
   position: absolute;
-  top: 38px;
+  top: 100%;
   left: 0;
-  background: #fff;
-  border: 1px solid #ccc;
+  right: auto;
+  background: #fff !important;
+  border: 2px solid #ff0000 !important;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(67,89,103,0.13);
-  z-index: 9999;
+  z-index: 99999 !important;
   padding: 0.5rem;
   flex-direction: column !important;
   align-items: center;
@@ -1307,9 +1312,28 @@ body.dark-mode #darkModeToggle {
   min-width: 260px;
   width: auto;
   white-space: nowrap;
+  transform: translateX(0);
+  margin-top: 5px;
 }
-.lang-dropdown[style*='display: block'] {
+
+/* Ensure dropdown is visible when flex is set */
+.lang-dropdown[style*='display: flex'],
+.lang-dropdown[style*='display:flex'] {
   display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.lang-dropdown[dir='rtl'] {
+  flex-direction: column !important;
+  left: auto;
+  right: 0;
+  transform: translateX(0);
+}
+.lang-dropdown[dir='ltr'] {
+  flex-direction: column !important;
+  left: 0;
+  right: auto;
+  transform: translateX(0);
 }
 .lang-option {
   width: 32px;
@@ -1346,11 +1370,20 @@ body.dark-mode #darkModeToggle {
   .lang-dropdown {
     min-width: 240px;
     padding: 0.4rem;
+    max-width: calc(100vw - 20px); /* Ensure it doesn't exceed screen width */
   }
-}
-.lang-dropdown[dir='rtl'] {
-  flex-direction: column !important;
-}
-.lang-dropdown[dir='ltr'] {
-  flex-direction: column !important;
+  
+  /* Force RTL dropdown to stay within screen on mobile */
+  .lang-dropdown[dir='rtl'] {
+    left: auto;
+    right: 0;
+    max-width: calc(100vw - 20px);
+  }
+  
+  /* Force LTR dropdown to stay within screen on mobile */
+  .lang-dropdown[dir='ltr'] {
+    left: 0;
+    right: auto;
+    max-width: calc(100vw - 20px);
+  }
 }

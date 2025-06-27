@@ -327,9 +327,9 @@ main {
 .contact-section {
   background: var(--section-bg);
   border-radius: var(--radius);
-  box-shadow: 0 2px 12px rgba(67,89,103,0.06);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2.5rem 0;
+  margin-bottom: 0;
+  text-align: center;
 }
 .contact-section h2 {
   color: var(--main-color);
@@ -647,7 +647,7 @@ main {
 }
 .contact-form {
   max-width: 480px;
-  margin: 2.5rem 0 0 0;
+  margin: 2.5rem auto 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.7rem;
@@ -1299,11 +1299,11 @@ body.dark-mode #darkModeToggle {
   top: 100%;
   left: 0;
   right: auto;
-  background: #fff !important;
-  border: 2px solid #ff0000 !important;
+  background: #fff;
+  border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(67,89,103,0.13);
-  z-index: 99999 !important;
+  z-index: 9999;
   padding: 0.5rem;
   flex-direction: column !important;
   align-items: center;
@@ -1320,8 +1320,6 @@ body.dark-mode #darkModeToggle {
 .lang-dropdown[style*='display: flex'],
 .lang-dropdown[style*='display:flex'] {
   display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 .lang-dropdown[dir='rtl'] {
   flex-direction: column !important;

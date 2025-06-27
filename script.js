@@ -627,6 +627,57 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       updateButtonStates();
     }, 100);
+
+    // --- Projects Navigation Arrow Logic ---
+    function updateProjectNavArrow() {
+      const navArrow = document.getElementById('projectNavArrow');
+      const navArrowSvg = document.getElementById('projectNavArrowSvg');
+      if (!navArrow || !navArrowSvg) return;
+      const dir = document.body.getAttribute('dir') || 'ltr';
+      // LTR
+      if (dir === 'ltr') {
+        if (currentSlide === 0) {
+          // חץ ימין (→)
+          navArrow.style.right = '5px';
+          navArrow.style.left = 'auto';
+          navArrowSvg.innerHTML = '<path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(1);
+        } else {
+          // חץ שמאל (←)
+          navArrow.style.left = '5px';
+          navArrow.style.right = 'auto';
+          navArrowSvg.innerHTML = '<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(0);
+        }
+      } else { // RTL
+        if (currentSlide === 0) {
+          // חץ שמאל (←)
+          navArrow.style.left = '5px';
+          navArrow.style.right = 'auto';
+          navArrowSvg.innerHTML = '<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(1);
+        } else {
+          // חץ ימין (→)
+          navArrow.style.right = '5px';
+          navArrow.style.left = 'auto';
+          navArrowSvg.innerHTML = '<path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(0);
+        }
+      }
+    }
+    // קרא לפונקציה הזו בכל showSlide, setLanguage, ו-init ראשוני
+    // ... existing code ...
+    // הוסף בסוף showSlide()
+    updateProjectNavArrow();
+    // הוסף בסוף setLanguage()
+    setTimeout(updateProjectNavArrow, 100);
+    // הוסף בסוף initializeProjectNavigation()
+    updateProjectNavArrow();
+    // ... existing code ...
   }
 
   // Language switcher UI logic
@@ -792,27 +843,72 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Showing slide:', slideIndex);
     const slides = document.querySelectorAll('.projects-slide');
     const dots = document.querySelectorAll('.dot');
-    
     // Hide all slides
     slides.forEach(slide => slide.classList.remove('active'));
-    
     // Show the target slide
     if (slides[slideIndex]) {
       slides[slideIndex].classList.add('active');
     }
-    
     // Update dots
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === slideIndex);
     });
-    
     // Update current slide variable
     currentSlide = slideIndex;
-    
     // Update button states
     updateButtonStates();
-    
     console.log('Slide shown successfully. Current slide:', currentSlide);
+
+    // --- Projects Navigation Arrow Logic ---
+    function updateProjectNavArrow() {
+      const navArrow = document.getElementById('projectNavArrow');
+      const navArrowSvg = document.getElementById('projectNavArrowSvg');
+      if (!navArrow || !navArrowSvg) return;
+      const dir = document.body.getAttribute('dir') || 'ltr';
+      // LTR
+      if (dir === 'ltr') {
+        if (currentSlide === 0) {
+          // חץ ימין (→)
+          navArrow.style.right = '5px';
+          navArrow.style.left = 'auto';
+          navArrowSvg.innerHTML = '<path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(1);
+        } else {
+          // חץ שמאל (←)
+          navArrow.style.left = '5px';
+          navArrow.style.right = 'auto';
+          navArrowSvg.innerHTML = '<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(0);
+        }
+      } else { // RTL
+        if (currentSlide === 0) {
+          // חץ שמאל (←)
+          navArrow.style.left = '5px';
+          navArrow.style.right = 'auto';
+          navArrowSvg.innerHTML = '<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(1);
+        } else {
+          // חץ ימין (→)
+          navArrow.style.right = '5px';
+          navArrow.style.left = 'auto';
+          navArrowSvg.innerHTML = '<path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          navArrow.disabled = false;
+          navArrow.onclick = () => showSlide(0);
+        }
+      }
+    }
+    // קרא לפונקציה הזו בכל showSlide, setLanguage, ו-init ראשוני
+    // ... existing code ...
+    // הוסף בסוף showSlide()
+    updateProjectNavArrow();
+    // הוסף בסוף setLanguage()
+    setTimeout(updateProjectNavArrow, 100);
+    // הוסף בסוף initializeProjectNavigation()
+    updateProjectNavArrow();
+    // ... existing code ...
   }
 
   // Function to go to next slide
@@ -1149,4 +1245,16 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(`Dot ${index}:`, dot.classList.contains('active') ? 'ACTIVE' : 'inactive');
     });
   };
+
+  // בדיקת לחיצת כפתור prevProject ב-RTL
+  document.addEventListener('DOMContentLoaded', function() {
+    const prevBtn = document.getElementById('prevProject');
+    if (prevBtn) {
+      prevBtn.style.background = 'orange'; // צבע לבדיקה
+      prevBtn.addEventListener('click', function() {
+        alert('נלחץ חץ שמאלי!');
+        console.log('נלחץ חץ שמאלי!');
+      });
+    }
+  });
 }); 

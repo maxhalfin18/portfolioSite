@@ -1704,3 +1704,15 @@ body.dark-mode #darkModeToggle {
     color: var(--white);
   }
 }
+
+/* חצים בפרויקטים - מיקום דינמי לפי כיוון */
+body[dir='ltr'] .nav-arrow {
+  right: 5px !important;
+  left: auto !important;
+}
+body[dir='rtl'] .nav-arrow {
+  left: 5px !important;
+  right: auto !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}

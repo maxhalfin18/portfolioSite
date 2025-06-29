@@ -109,6 +109,10 @@ The favicon (tab logo) is set to `assets/tab.png`.
 - High contrast mode support
 - Responsive design for all screen sizes
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Author
 
 Max Halfin  

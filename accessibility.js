@@ -29,11 +29,7 @@ class AccessibilitySystem {
         this.button.id = 'accessibility-button';
         this.button.className = 'accessibility-btn';
         this.button.innerHTML = `
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
-                <path d="M19 7H17V6C17 5.45 16.55 5 16 5H8C7.45 5 7 5.45 7 6V7H5C4.45 7 4 7.45 4 8V19C4 19.55 4.45 20 5 20H19C19.55 20 20 19.55 20 19V8C20 7.45 19.55 7 19 7ZM18 18H6V9H8V10C8 10.55 8.45 11 9 11H15C15.55 11 16 10.55 16 10V9H18V18Z" fill="currentColor"/>
-                <path d="M12 12C10.9 12 10 12.9 10 14C10 15.1 10.9 16 12 16C13.1 16 14 15.1 14 14C14 12.9 13.1 12 12 12Z" fill="currentColor"/>
-            </svg>
+            <img src="assets/access.png" alt="נגישות" width="24" height="24">
         `;
         this.button.setAttribute('aria-label', 'פתח תפריט נגישות');
         this.button.setAttribute('role', 'button');

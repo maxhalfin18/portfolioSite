@@ -3,6 +3,7 @@
 	<head>
 		<title>NagishLi v2: Installation Code Generator</title>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Dan Ya'akov" />
 		<meta name="url" content="http://www.localize.co.il" />
 		<meta name="copyright" content="Localize" />
@@ -10,8 +11,8 @@
 	</head>
 
 	<body>
-
-		<div class="title">Installation Code Generator for NagishLi v2</div>
+		<main>
+			<h1>Installation Code Generator for NagishLi v2</h1>
 		<p class="text">Thank you for choosing NagishLi!<br />This file will help you generate a code to place directly in your website. Change the settings for your website as you wish, and when you're done click on 'Generate code'.<br />If you're not sure about a certain setting and need more information about it, you can click on <span class="help" onclick="alert(msgs.info);">&#x2753;</span> next to it.<br /><b>Notice: The generated code should be placed directly before the <span class="ltr">&lt;/body&gt;</span> tag.</b> Good luck!</p>
 		<div><label for="url"><span class="help" onclick="alert(msgs.url);">&#x2753;</span> NagishLi's file location in your website:</label> <span dir="ltr"><input type="text" id="url" />/nagishli.js</span></div>
 		<div><label for="version"><span class="help" onclick="alert(msgs.ver);">&#x2753;</span> NagishLi's version on your website (for example, 2.2.2):</label> <input type="text" maxlength="5" id="version" /></div>
@@ -29,7 +30,7 @@
 		<div>
 			<label for="accordion"><span class="help" onclick="alert(msgs.accordion);">&#x2753;</span> Accordion mode:</label> <select id="accordion"><option value="0">No</option><option value="1">Yes</option></select>
 		</div>
-		<div><label for="license"><a href="http://nagish.li/license.html" target="_blank">License</a> (if you have a license key, paste it here):</label> <input type="text" id="license" /></div>
+		<div><label for="license"><a href="http://nagish.li/license.html" target="_blank" rel="noopener">License</a> (if you have a license key, paste it here):</label> <input type="text" id="license" /></div>
 		<div><label for="directory"><span class="help" onclick="alert(msgs.dir);">&#x2753;</span> NagishLi's external files directory location:</label> <input type="text" id="directory" /></div>
 		<div>
 			<span class="help" onclick="alert(msgs.contact);">&#x2753;</span> Details for the built-in accessibility statement:
@@ -40,7 +41,8 @@
 		</div>
 		<div><button onclick="generateCode()">Generate code</button></div>
 		<div class="hide"><textarea id="nagishli-code"></textarea></div>
-		<div class="bottom">&copy; 2016-<script>document.write(new Date().getFullYear());</script> <a href="http://www.nagish.li" target="_blank" class="product">NagishLi</a> - A free accessibility plugin from <a href="http://www.localize.co.il" target="_blank" class="developer">Localize*</a></div>
+		</main>
+		<div class="bottom">&copy; 2016-<script>document.write(new Date().getFullYear());</script> <a href="http://www.nagish.li" target="_blank" rel="noopener" class="product">NagishLi</a> - A free accessibility plugin from <a href="http://www.localize.co.il" target="_blank" rel="noopener" class="developer">Localize*</a></div>
 
 		<script src="functions.js" charset="utf-8"></script>
 	</body>

@@ -8,6 +8,25 @@
   --white: #fff;
   --radius: 22px;
 }
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--main-color);
+  color: var(--white);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
@@ -2452,5 +2471,100 @@ body {
   [dir="rtl"] .accessibility-panel {
     left: 12px;
     right: 12px;
+  }
+}
+
+/* Footer Links Styles */
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: var(--accent-color) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid transparent !important;
+}
+
+.footer-links a:hover {
+  background-color: rgba(110, 193, 228, 0.1) !important;
+  border-color: var(--accent-color) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(110, 193, 228, 0.2) !important;
+}
+
+.footer-links a:focus {
+  outline: 2px solid var(--accent-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* Additional footer link styles to ensure visibility */
+.footer-copy a[href*=".html"] {
+  color: #6ec1e4 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  margin: 0 8px !important;
+  display: inline-block !important;
+  border: 1px solid transparent !important;
+  transition: all 0.3s ease !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer-copy a[href*=".html"]:hover {
+  background-color: rgba(110, 193, 228, 0.2) !important;
+  border-color: #6ec1e4 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(110, 193, 228, 0.2) !important;
+}
+
+.footer-copy a[href*=".html"]:focus {
+  outline: 2px solid #6ec1e4 !important;
+  outline-offset: 2px !important;
+}
+
+/* Force footer links to be visible */
+.footer-copy {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.footer-copy > div:last-child {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    gap: 15px !important;
+  }
+  
+  .footer-links a {
+    padding: 6px 10px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    gap: 10px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .footer-links a {
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    min-width: 120px !important;
+    text-align: center !important;
   }
 }

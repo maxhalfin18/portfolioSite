@@ -1266,6 +1266,50 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn('edu1-degree לא נמצא בדף!');
   }
+
+  // Footer links hover effects
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add hover effects to footer links
+    const footerLinks = document.querySelectorAll('.footer-copy a[href*=".html"]');
+    
+    footerLinks.forEach(link => {
+      // Add hover effects
+      link.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = 'rgba(110, 193, 228, 0.1)';
+        this.style.borderColor = '#6ec1e4';
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 4px 8px rgba(110, 193, 228, 0.2)';
+      });
+      
+      link.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'transparent';
+        this.style.borderColor = 'transparent';
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+      });
+      
+      link.addEventListener('focus', function() {
+        this.style.outline = '2px solid #6ec1e4';
+        this.style.outlineOffset = '2px';
+      });
+      
+      link.addEventListener('blur', function() {
+        this.style.outline = 'none';
+      });
+      
+      // Debug: log to console to make sure links are found
+      console.log('Found footer link:', link.href);
+    });
+    
+    // Also add a simple test to make sure the links are visible
+    setTimeout(() => {
+      const testLinks = document.querySelectorAll('.footer-copy a[href*=".html"]');
+      console.log('Total footer links found:', testLinks.length);
+      testLinks.forEach((link, index) => {
+        console.log(`Link ${index + 1}:`, link.textContent, link.href);
+      });
+    }, 1000);
+  });
 }); 
 
 window.onload = function() { window.scrollTo(0, 0); }; 

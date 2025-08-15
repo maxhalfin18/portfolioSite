@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 	<head>
 		<title>נגיש לי 2: יצירת קוד התקנה</title>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Dan Ya'akov" />
 		<meta name="url" content="http://www.localize.co.il" />
 		<meta name="copyright" content="Localize" />
@@ -10,8 +11,8 @@
 	</head>
 
 	<body>
-
-		<div class="title">יצירת קוד התקנה עבור נגיש לי 2</div>
+		<main>
+			<h1>יצירת קוד התקנה עבור נגיש לי 2</h1>
 		<p class="text">תודה שבחרתם בנגיש לי!<br />הקובץ הזה יסייע לכם ליצור קוד התקנה בקלות שאותו תוכלו לשתול ישירות באתר שלכם. התאימו את ההגדרות לפי רצונכם ולסיום לחצו על 'יצירת קוד'. אם אינכם בטוחים לגבי הגדרה מסוימת וזקוקים להסבר נוסף, אתם יכולים ללחוץ על <span class="help" onclick="alert(msgs.info);">&#x2753;</span> לצד ההגדרה.<br /><b>שימו לב - קוד ההתקנה צריך להיות ממוקם בדיוק לפני תג <span class="ltr">&lt;/body&gt;</span>.</b> בהצלחה!</p>
 		<div><label for="url"><span class="help" onclick="alert(msgs.url);">&#x2753;</span> מיקום הקובץ של נגיש לי בתוך האתר שלכם:</label> <span dir="ltr"><input type="text" id="url" />/nagishli.js</span></div>
 		<div><label for="version"><span class="help" onclick="alert(msgs.ver);">&#x2753;</span> הגירסה של נגיש לי שאותה אתם מתקינים (לדוגמה, 2.2.2):</label> <input type="text" maxlength="5" id="version" /></div>
@@ -40,7 +41,8 @@
 		</div>
 		<div><button onclick="generateCode()">יצירת קוד</button></div>
 		<div class="hide"><textarea id="nagishli-code"></textarea></div>
-		<div class="bottom">&copy; 2016-<script>document.write(new Date().getFullYear());</script> <a href="http://www.nagish.li" target="_blank" class="product">נגיש לי</a> -  תוסף נגישות בחינם לבעלי אתרים מבית <a href="http://www.localize.co.il" target="_blank" class="developer">לוקלייז*</a></div>
+		</main>
+		<div class="bottom">&copy; 2016-<script>document.write(new Date().getFullYear());</script> <a href="http://www.nagish.li" target="_blank" rel="noopener" class="product">נגיש לי</a> -  תוסף נגישות בחינם לבעלי אתרים מבית <a href="http://www.localize.co.il" target="_blank" rel="noopener" class="developer">לוקלייז*</a></div>
 
 		<script src="functions.js" charset="utf-8"></script>
 	</body>

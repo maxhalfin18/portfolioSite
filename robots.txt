@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /docs/
+Disallow: /docs/english/
+Disallow: /docs/hebrew/
+
+# Allow main site
+Allow: /
+
+# Sitemap (if you have one)
+# Sitemap: https://your-domain.com/sitemap.xml
